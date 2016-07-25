@@ -2,13 +2,18 @@ package com.epicodus.imagesearch.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.imagesearch.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class EgyptActivity extends AppCompatActivity {
 
@@ -16,11 +21,15 @@ public class EgyptActivity extends AppCompatActivity {
     TimerTask task;
     Integer timeRemaining;
     private TextView mTimerView;
+    @Bind(R.id.firstImageView) ImageView mFirstImageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_egypt);
+        ButterKnife.bind(this);
+        Picasso.with(this).load(R.drawable.egypt_level).fit().into(mFirstImageView);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
