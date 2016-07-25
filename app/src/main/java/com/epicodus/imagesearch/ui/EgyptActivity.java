@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.epicodus.imagesearch.binjr.R;
+import com.epicodus.imagesearch.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
