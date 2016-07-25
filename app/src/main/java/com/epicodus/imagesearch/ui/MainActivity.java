@@ -1,16 +1,9 @@
-package com.example.guest.binjr.ui;
+package com.epicodus.imagesearch.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.guest.binjr.R;
-
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
+import com.epicodus.imagesearch.binjr.R;
 
 import butterknife.ButterKnife;
 

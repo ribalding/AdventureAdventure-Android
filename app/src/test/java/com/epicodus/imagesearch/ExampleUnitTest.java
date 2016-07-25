@@ -1,4 +1,4 @@
-package com.example.guest.binjr;
+package com.epicodus.imagesearch;
 
 import org.junit.Test;
 

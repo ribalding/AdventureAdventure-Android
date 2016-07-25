@@ -1,11 +1,11 @@
-package com.example.guest.binjr.ui;
+package com.epicodus.imagesearch.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.guest.binjr.R;
+import com.epicodus.imagesearch.binjr.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

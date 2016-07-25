@@ -1,4 +1,4 @@
-package com.example.guest.binjr;
+package com.epicodus.imagesearch;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
