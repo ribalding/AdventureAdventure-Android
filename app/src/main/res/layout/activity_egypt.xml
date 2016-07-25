@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.imagesearch.ui.EgyptActivity">
+    tools:context="com.epicodus.imagesearch.ui.EgyptActivity"
+    android:background="@drawable/egypt_level">
 
     <TextView
         android:id="@+id/timerView"
@@ -11,11 +12,29 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/firstImageView"
-        android:layout_below="@+id/timerView"
-        android:layout_alignParentBottom="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/eyesButton"
+        android:background="#00ffffff"
+        android:layout_marginBottom="144dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/timerView"
+        android:layout_alignEnd="@+id/timerView" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/dragonButton"
+        android:background="#00ffffff"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignTop="@+id/eyesButton"
+        android:layout_toRightOf="@+id/eyesButton"
+        android:layout_toEndOf="@+id/eyesButton" />
 
 </RelativeLayout>

@@ -2,12 +2,13 @@ package com.epicodus.imagesearch.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.imagesearch.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,13 +16,14 @@ import java.util.TimerTask;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class EgyptActivity extends AppCompatActivity {
+public class EgyptActivity extends AppCompatActivity implements View.OnClickListener {
 
     Timer mTimer;
     TimerTask task;
     Integer timeRemaining;
     private TextView mTimerView;
-    @Bind(R.id.firstImageView) ImageView mFirstImageView;
+    @Bind(R.id.eyesButton) Button mTestButton;
+    @Bind(R.id.dragonButton) Button mDragonButton;
 
 
     @Override
@@ -29,7 +31,8 @@ public class EgyptActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_egypt);
         ButterKnife.bind(this);
-        Picasso.with(this).load(R.drawable.egypt_level).fit().into(mFirstImageView);
+        mTestButton.setOnClickListener(this);
+        mDragonButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
@@ -55,5 +58,15 @@ public class EgyptActivity extends AppCompatActivity {
 
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view == mTestButton) {
+            Log.d("Winning", "sehn");
+
+        } else if (view == mDragonButton){
+            Log.d("Dragons", "everywhere");
+        }
     }
 }
