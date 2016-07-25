@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name="com.epicodus.imagesearch.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.epicodus.imagesearch.ui.EgyptActivity"></activity>
+        <activity android:name=".ui.EgyptActivity" />
+        <activity
+            android:name=".ui.TrophyRoomActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
