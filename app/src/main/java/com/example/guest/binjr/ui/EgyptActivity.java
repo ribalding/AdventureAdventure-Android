@@ -1,16 +1,17 @@
-package com.example.guest.binjr;
+package com.example.guest.binjr.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
+import com.example.guest.binjr.R;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class EgyptActivity extends AppCompatActivity {
+
     Timer mTimer;
     TimerTask task;
     Integer timeRemaining;
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_egypt);
+
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
         task = new TimerTask() {
