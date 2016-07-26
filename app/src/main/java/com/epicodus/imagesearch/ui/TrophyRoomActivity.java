@@ -26,6 +26,9 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     @Bind(R.id.eyeButton) Button mEyeButton;
     @Bind(R.id.hatButton) Button mHatButton;
     @Bind(R.id.handprintButton) Button mHandprintButton;
+    @Bind(R.id.yarnButton) Button mYarnButton;
+    @Bind(R.id.pinsButton) Button mPinsButton;
+    @Bind(R.id.hookButton) Button mHookButton;
     @Bind(R.id.timerView) TextView mTimerView;
     private Integer youWin;
     private Integer winNumber;
@@ -36,14 +39,17 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_trophy_room);
         ButterKnife.bind(this);
         youWin = 0;
-        winNumber = 3;
+        winNumber = 6;
 
         mEyeButton.setOnClickListener(this);
         mHatButton.setOnClickListener(this);
         mHandprintButton.setOnClickListener(this);
+        mPinsButton.setOnClickListener(this);
+        mYarnButton.setOnClickListener(this);
+        mHookButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
-        timeRemaining = 10;
+        timeRemaining = 60;
         task = new TimerTask() {
             @Override
             public void run() {
@@ -71,7 +77,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         if (view == mEyeButton ) {
             Toast.makeText(getApplicationContext(), "OW MY EYE", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The muthafuckin eye");
             mEyeButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
@@ -80,7 +85,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         }
         if (view == mHatButton) {
             Toast.makeText(getApplicationContext(), "topothemornintoya", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The sweet-ass hat.");
             mHatButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
@@ -88,14 +92,40 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             }
         }
         if (view == mHandprintButton) {
-            Toast.makeText(getApplicationContext(), "Very ominous", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The handprint.");
+            Toast.makeText(getApplicationContext(), "Such ominous", Toast.LENGTH_SHORT).show();
             mHandprintButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
                 winFunction();
             }
         }
+        if (view == mYarnButton){
+            Toast.makeText(getApplicationContext(), "Very Yarn", Toast.LENGTH_SHORT).show();
+            mYarnButton.setOnClickListener(null);
+            youWin ++;
+            if(youWin.equals(winNumber)){
+                winFunction();
+            }
+        }
+
+        if(view == mHookButton){
+            Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
+            mHookButton.setOnClickListener(null);
+            youWin ++;
+            if(youWin.equals(winNumber)){
+                winFunction();
+            }
+        }
+
+        if(view == mPinsButton){
+            Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
+            mPinsButton.setOnClickListener(null);
+            youWin ++;
+            if(youWin.equals(winNumber)){
+                winFunction();
+            }
+        }
+
     }
 
     private void winFunction(){
