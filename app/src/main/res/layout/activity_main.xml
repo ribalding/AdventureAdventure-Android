@@ -36,11 +36,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MONEY Room!"
         android:id="@+id/trophyRoomStartButton"
         android:layout_alignBottom="@+id/startButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="MONEY Room" />
 
 
 </RelativeLayout>
