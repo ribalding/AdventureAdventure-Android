@@ -1,5 +1,6 @@
 package com.epicodus.imagesearch.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +40,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_egypt);
         ButterKnife.bind(this);
         youWin = 0;
-        winNumber = 3;
+        winNumber = 6;
         mTestButton.setOnClickListener(this);
         mDragonButton.setOnClickListener(this);
         mSpiderButton.setOnClickListener(this);
@@ -88,7 +89,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
             Log.d("Dragons", "everywhere");
             mDragonButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -97,7 +98,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
             Log.d("Bino", "Win");
             mBinoButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -106,7 +107,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
             Log.d("Fish", "Just Keep Swimming");
             mFishButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -115,7 +116,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
             Log.d("purse", "Purse button...");
             mPurseButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -124,12 +125,13 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
             Log.d("Spider", "Ahhh!");
             mSpiderButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
     }
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        mTimer.cancel();
     }
 }
