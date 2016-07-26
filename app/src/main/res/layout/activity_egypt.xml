@@ -228,32 +228,7 @@
             android:layout_alignTop="@+id/layoutBot"
             android:layout_toLeftOf="@+id/center">
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:id="@+id/dragonButton"
-                android:background="#ffffff"
-                android:layout_x="120dp"
-            android:layout_y="216dp"
-            android:layout_toLeftOf="@+id/botLeftCenter"
-            android:layout_above="@+id/botLeftCenter"
-            android:layout_below="@+id/eyesButton" />
 
-            <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/eyesButton"
-            android:background="#ffffff"
-            android:layout_x="39dp"
-            android:layout_y="183dp"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/dragonButton"
-            android:layout_marginRight="31dp"
-            android:layout_marginEnd="31dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="0dp"
@@ -269,7 +244,35 @@
                 android:layout_toLeftOf="@+id/botLeftCenter"
                 android:layout_toStartOf="@+id/botLeftCenter"
                 android:layout_above="@+id/botLeftCenter"
-                android:id="@+id/layoutNine"></RelativeLayout>
+                android:id="@+id/layoutNine">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/dragonButton"
+                    android:background="#ffffff"
+                    android:layout_x="120dp"
+                    android:layout_y="216dp"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/eyesButton"
+                    android:background="#ffffff"
+                    android:layout_x="39dp"
+                    android:layout_y="183dp"
+                    android:layout_toRightOf="@+id/dragonButton"
+                    android:layout_below="@+id/dragonButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
