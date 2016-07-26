@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
 
 import java.util.Timer;
@@ -31,6 +32,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.purseButton) Button mPurseButton;
     @Bind(R.id.spiderButton) Button mSpiderButton;
     @Bind(R.id.fishButton) Button mFishButton;
+    @Bind(R.id.hintView) TextView mHintView;
 
 
 
@@ -50,6 +52,8 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 60;
+
+        advance(youWin);
         task = new TimerTask() {
             @Override
             public void run() {
@@ -79,59 +83,50 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         if(view == mTestButton) {
             Log.d("Winning", "sehn");
             mTestButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            advance(youWin);
         }
 
         if (view == mDragonButton){
             Log.d("Dragons", "everywhere");
             mDragonButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            advance(youWin);
         }
 
         if(view == mBinoButton) {
             Log.d("Bino", "Win");
             mBinoButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            advance(youWin);
         }
 
         if(view == mFishButton) {
             Log.d("Fish", "Just Keep Swimming");
             mFishButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            advance(youWin);
         }
 
         if(view == mPurseButton) {
             Log.d("purse", "Purse button...");
             mPurseButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            advance(youWin);
         }
 
         if(view == mSpiderButton) {
             Log.d("Spider", "Ahhh!");
             mSpiderButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            advance(youWin);
         }
     }
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mTimer.cancel();
+    }
+
+    private void advance(int stage) {
+        if (stage == 6 && timeRemaining != 0) {
+            winFunction();
+        } else if (timeRemaining != 0) {
+            mHintView.setText(Constants.EGYPT_HINTS[stage]);
+            youWin ++;
+        }
     }
 }

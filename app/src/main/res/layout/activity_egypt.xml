@@ -69,7 +69,9 @@
                 android:layout_alignBottom="@+id/layoutOne"
                 android:layout_toRightOf="@+id/layoutOne"
                 android:layout_toEndOf="@+id/layoutOne"
-                android:id="@+id/layoutTwo"></RelativeLayout>
+                android:id="@+id/layoutTwo">
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -89,7 +91,9 @@
                 android:layout_toEndOf="@+id/layoutFive"
                 android:layout_below="@+id/topLeftCenter"
                 android:layout_toRightOf="@+id/layoutFive"
-                android:id="@+id/layoutSix"></RelativeLayout>
+                android:id="@+id/layoutSix">
+
+            </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
@@ -116,7 +120,9 @@
                 android:layout_alignBottom="@+id/topRightCenter"
                 android:layout_toLeftOf="@+id/topRightCenter"
                 android:layout_toStartOf="@+id/topRightCenter"
-                android:id="@+id/layoutThree"></RelativeLayout>
+                android:id="@+id/layoutThree">
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -124,7 +130,21 @@
                 android:layout_above="@+id/topRightCenter"
                 android:layout_toRightOf="@+id/layoutThree"
                 android:layout_toEndOf="@+id/layoutThree"
-                android:id="@+id/layoutFour"></RelativeLayout>
+                android:id="@+id/layoutFour">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="DIS B where the hint go"
+                    android:id="@+id/hintView"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -375,7 +395,8 @@
                 android:layout_toEndOf="@+id/layoutThirteen"></RelativeLayout>
 
         </RelativeLayout>
-    </RelativeLayout>
+
+</RelativeLayout>
 
 
 
