@@ -144,7 +144,27 @@
                 android:layout_toEndOf="@+id/topRightCenter"
                 android:layout_alignTop="@+id/topRightCenter"
                 android:layout_toRightOf="@+id/topRightCenter"
-                android:id="@+id/layoutEight"></RelativeLayout>
+                android:id="@+id/layoutEight">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/eightCenter"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="false" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spiderButton"
+                    android:layout_alignTop="@+id/eightCenter"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00FFFFFF"
+                    android:singleLine="true"
+                    android:layout_marginTop="10dp" />
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -185,7 +205,29 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignRight="@+id/botRightCenter"
                 android:layout_alignEnd="@+id/botRightCenter"
-                android:id="@+id/layoutEleven"></RelativeLayout>
+                android:id="@+id/layoutEleven">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/binoButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00FFFFFF"
+                    android:layout_below="@+id/elevenCenter"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/elevenCenter"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -213,7 +255,19 @@
                 android:layout_below="@+id/botRightCenter"
                 android:layout_alignLeft="@+id/botRightCenter"
                 android:layout_alignStart="@+id/botRightCenter"
-                android:id="@+id/layoutSixteen"></RelativeLayout>
+                android:id="@+id/layoutSixteen">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/purseButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="#00ffffff"
+                    android:layout_marginRight="6dp" />
+            </RelativeLayout>
 
 
         </RelativeLayout>
@@ -251,7 +305,7 @@
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:id="@+id/dragonButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_x="120dp"
                     android:layout_y="216dp"
 
@@ -263,7 +317,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/eyesButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_x="39dp"
                     android:layout_y="183dp"
                     android:layout_toRightOf="@+id/dragonButton"
@@ -280,7 +334,29 @@
                 android:layout_above="@+id/botLeftCenter"
                 android:layout_toRightOf="@+id/layoutNine"
                 android:layout_toEndOf="@+id/layoutNine"
-                android:id="@+id/layoutTen"></RelativeLayout>
+                android:id="@+id/layoutTen">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/textView"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fishButton"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/textView"
+                    android:layout_toStartOf="@+id/textView"
+                    android:layout_above="@+id/textView"
+                    android:layout_marginBottom="10dp"
+                    android:background="#00FFFFFF" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"

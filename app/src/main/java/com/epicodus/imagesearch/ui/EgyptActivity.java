@@ -24,6 +24,10 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     private TextView mTimerView;
     @Bind(R.id.eyesButton) Button mTestButton;
     @Bind(R.id.dragonButton) Button mDragonButton;
+    @Bind(R.id.binoButton) Button mBinoButton;
+    @Bind(R.id.purseButton) Button mPurseButton;
+    @Bind(R.id.spiderButton) Button mSpiderButton;
+    @Bind(R.id.fishButton) Button mFishButton;
 
 
     @Override
@@ -33,6 +37,10 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
         mTestButton.setOnClickListener(this);
         mDragonButton.setOnClickListener(this);
+        mSpiderButton.setOnClickListener(this);
+        mPurseButton.setOnClickListener(this);
+        mFishButton.setOnClickListener(this);
+        mBinoButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
@@ -64,9 +72,26 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if(view == mTestButton) {
             Log.d("Winning", "sehn");
+        }
 
-        } else if (view == mDragonButton){
+        if (view == mDragonButton){
             Log.d("Dragons", "everywhere");
+        }
+
+        if(view == mBinoButton) {
+            Log.d("Bino", "Win");
+        }
+
+        if(view == mFishButton) {
+            Log.d("Fish", "Just Keep Swimming");
+        }
+
+        if(view == mPurseButton) {
+            Log.d("purse", "Purse button...");
+        }
+
+        if(view == mSpiderButton) {
+            Log.d("Spider", "Ahhh!");
         }
     }
 }
