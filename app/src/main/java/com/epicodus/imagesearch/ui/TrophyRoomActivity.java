@@ -18,10 +18,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class TrophyRoomActivity extends AppCompatActivity implements View.OnClickListener{
-    Timer mTimer;
-    TimerTask task;
-    Integer timeRemaining;
-//    private TextView mTimerView;
+
 
     @Bind(R.id.eyeButton) Button mEyeButton;
     @Bind(R.id.hatButton) Button mHatButton;
@@ -32,6 +29,9 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     @Bind(R.id.timerView) TextView mTimerView;
     private Integer youWin;
     private Integer winNumber;
+    Timer mTimer;
+    TimerTask task;
+    Integer timeRemaining;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +47,9 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mPinsButton.setOnClickListener(this);
         mYarnButton.setOnClickListener(this);
         mHookButton.setOnClickListener(this);
-
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 60;
+
         task = new TimerTask() {
             @Override
             public void run() {
@@ -69,9 +69,11 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
 
             }
         };
+
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
+
 
     @Override
     public void onClick(View view) {

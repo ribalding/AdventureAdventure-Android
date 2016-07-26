@@ -21,6 +21,8 @@
         <activity
             android:name=".ui.TrophyRoomActivity"
             android:screenOrientation="landscape" />
+        <activity android:name=".SecretGardenActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
