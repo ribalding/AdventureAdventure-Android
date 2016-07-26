@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.imagesearch.R;
+import com.epicodus.imagesearch.SecretGardenActivity;
 import com.squareup.picasso.Picasso;
 
 import butterknife.Bind;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.startButton) Button mStartButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
     @Bind(R.id.trophyRoomStartButton) Button mTrophyRoomButton;
+    @Bind(R.id.gardenButton) Button mGardenButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Picasso.with(this).load(R.drawable.welcome_image).fit().into(mWelcomeImageView);
         mStartButton.setOnClickListener(this);
         mTrophyRoomButton.setOnClickListener(this);
+        mGardenButton.setOnClickListener(this);
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
         mWelcomeTextView.setTypeface(pacificoFont);
     }
@@ -41,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (view == mTrophyRoomButton) {
             Intent intent = new Intent(MainActivity.this, TrophyRoomActivity.class);
+            startActivity(intent);
+        }
+        if (view == mGardenButton) {
+            Intent intent = new Intent(MainActivity.this, SecretGardenActivity.class);
             startActivity(intent);
         }
     }

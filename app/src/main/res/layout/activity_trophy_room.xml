@@ -86,7 +86,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:id="@+id/hatButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
@@ -161,7 +161,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:id="@+id/eyeButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
@@ -229,7 +229,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:id="@+id/handprintButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
