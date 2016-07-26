@@ -49,7 +49,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         mBinoButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
-        timeRemaining = 10;
+        timeRemaining = 60;
         task = new TimerTask() {
             @Override
             public void run() {

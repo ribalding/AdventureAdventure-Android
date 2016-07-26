@@ -79,7 +79,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "OW MY EYE", Toast.LENGTH_SHORT).show();
             mEyeButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -87,7 +87,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "topothemornintoya", Toast.LENGTH_SHORT).show();
             mHatButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -95,7 +95,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Such ominous", Toast.LENGTH_SHORT).show();
             mHandprintButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber)) {
+            if (youWin.equals(winNumber) && timeRemaining != 0) {
                 winFunction();
             }
         }
@@ -103,7 +103,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Very Yarn", Toast.LENGTH_SHORT).show();
             mYarnButton.setOnClickListener(null);
             youWin ++;
-            if(youWin.equals(winNumber)){
+            if(youWin.equals(winNumber) && timeRemaining != 0){
                 winFunction();
             }
         }
@@ -112,7 +112,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
             mHookButton.setOnClickListener(null);
             youWin ++;
-            if(youWin.equals(winNumber)){
+            if(youWin.equals(winNumber) && timeRemaining != 0){
                 winFunction();
             }
         }
@@ -121,7 +121,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
             mPinsButton.setOnClickListener(null);
             youWin ++;
-            if(youWin.equals(winNumber)){
+            if(youWin.equals(winNumber) && timeRemaining != 0){
                 winFunction();
             }
         }
