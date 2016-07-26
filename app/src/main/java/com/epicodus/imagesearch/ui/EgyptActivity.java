@@ -17,6 +17,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class EgyptActivity extends AppCompatActivity implements View.OnClickListener {
+    private Integer youWin;
+    private Integer winNumber;
 
     Timer mTimer;
     TimerTask task;
@@ -30,11 +32,14 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.fishButton) Button mFishButton;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_egypt);
         ButterKnife.bind(this);
+        youWin = 0;
+        winNumber = 3;
         mTestButton.setOnClickListener(this);
         mDragonButton.setOnClickListener(this);
         mSpiderButton.setOnClickListener(this);
@@ -72,26 +77,59 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if(view == mTestButton) {
             Log.d("Winning", "sehn");
+            mTestButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
         }
 
         if (view == mDragonButton){
             Log.d("Dragons", "everywhere");
+            mDragonButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
         }
 
         if(view == mBinoButton) {
             Log.d("Bino", "Win");
+            mBinoButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
         }
 
         if(view == mFishButton) {
             Log.d("Fish", "Just Keep Swimming");
+            mFishButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
         }
 
         if(view == mPurseButton) {
             Log.d("purse", "Purse button...");
+            mPurseButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
         }
 
         if(view == mSpiderButton) {
             Log.d("Spider", "Ahhh!");
+            mSpiderButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
         }
+    }
+    private void winFunction(){
+        Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
     }
 }
