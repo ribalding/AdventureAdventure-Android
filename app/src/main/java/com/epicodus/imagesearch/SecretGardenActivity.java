@@ -19,6 +19,9 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Bind(R.id.butterflyButton) Button mButterflyButton;
     @Bind(R.id.doveButton) Button mDoveButton;
     @Bind(R.id.heartButton) Button mHeartButton;
+    @Bind(R.id.catsGameButton) Button mCatsGameButton;
+    @Bind(R.id.squirrelButton) Button mSquirrelButton;
+    @Bind(R.id.cucumberThingButton) Button mCucumber;
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -32,11 +35,14 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_secret_garden);
         ButterKnife.bind(this);
         youWin = 0;
-        winNumber = 3;
+        winNumber = 6;
 
         mButterflyButton.setOnClickListener(this);
         mDoveButton.setOnClickListener(this);
         mHeartButton.setOnClickListener(this);
+        mCatsGameButton.setOnClickListener(this);
+        mSquirrelButton.setOnClickListener(this);
+        mCucumber.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
@@ -88,6 +94,33 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         if (view == mHeartButton) {
             Toast.makeText(getApplicationContext(), "tree lover", Toast.LENGTH_SHORT).show();
             Log.d("You clicked: ", "The heart.");
+            mHeartButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
+        }
+        if (view == mSquirrelButton) {
+            Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
+            Log.d("You clicked: ", "The squirrel.");
+            mHeartButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
+        }
+        if (view == mCucumber) {
+            Toast.makeText(getApplicationContext(), "Is this even a cucumber?", Toast.LENGTH_SHORT).show();
+            Log.d("You clicked: ", "The 'cuke.");
+            mHeartButton.setOnClickListener(null);
+            youWin ++;
+            if (youWin.equals(winNumber)) {
+                winFunction();
+            }
+        }
+        if (view == mCatsGameButton) {
+            Toast.makeText(getApplicationContext(), "Possibly an even worse game than this one", Toast.LENGTH_SHORT).show();
+            Log.d("You clicked: ", "The child's game.");
             mHeartButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
