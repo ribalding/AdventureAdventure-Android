@@ -21,11 +21,12 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     Timer mTimer;
     TimerTask task;
     Integer timeRemaining;
-    private TextView mTimerView;
+//    private TextView mTimerView;
 
     @Bind(R.id.eyeButton) Button mEyeButton;
     @Bind(R.id.hatButton) Button mHatButton;
     @Bind(R.id.handprintButton) Button mHandprintButton;
+    @Bind(R.id.timerView) TextView mTimerView;
     private Integer youWin;
     private Integer winNumber;
 

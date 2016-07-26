@@ -54,7 +54,18 @@
                 android:layout_alignBottom="@+id/topLeftCenter"
                 android:layout_toLeftOf="@+id/topLeftCenter"
                 android:layout_toStartOf="@+id/topLeftCenter"
-                android:id="@+id/layoutOne"></RelativeLayout>
+                android:id="@+id/layoutOne">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="all the minutes"
+                    android:id="@+id/timerView"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
