@@ -120,7 +120,6 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
-        timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
         mEditor.putInt("timeScore", timeElapsed).apply();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         System.out.println(mSharedPreferences.getInt("timeScore", 1000));

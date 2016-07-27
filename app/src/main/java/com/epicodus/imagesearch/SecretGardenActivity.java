@@ -59,14 +59,9 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        timeElapsed --;
+                        timeElapsed ++;
                         System.out.println(timeElapsed);
                         mTimerView.setText(timeElapsed.toString());
-                        if (timeElapsed == 0) {
-                            mTimer.cancel();
-                            mTimer.purge();
-                            Toast.makeText(getApplicationContext(), "FAILURE!", Toast.LENGTH_LONG).show();
-                        }
                     }
                 });
 
@@ -110,7 +105,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         if (view == mSquirrelButton) {
             Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
             Log.d("You clicked: ", "The squirrel.");
-            mHeartButton.setOnClickListener(null);
+            mSquirrelButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
                 winFunction();
@@ -119,7 +114,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         if (view == mCucumber) {
             Toast.makeText(getApplicationContext(), "Is this even a cucumber?", Toast.LENGTH_SHORT).show();
             Log.d("You clicked: ", "The 'cuke.");
-            mHeartButton.setOnClickListener(null);
+            mCucumber.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
                 winFunction();
@@ -128,7 +123,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         if (view == mCatsGameButton) {
             Toast.makeText(getApplicationContext(), "Possibly an even worse game than this one", Toast.LENGTH_SHORT).show();
             Log.d("You clicked: ", "The child's game.");
-            mHeartButton.setOnClickListener(null);
+            mCatsGameButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
                 winFunction();
