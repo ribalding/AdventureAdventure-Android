@@ -1,6 +1,5 @@
 package com.epicodus.imagesearch.ui;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +25,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     TimerTask task;
     Integer timeRemaining;
     private TextView mTimerView;
-    @Bind(R.id.eyesButton) Button mTestButton;
+    @Bind(R.id.eyesButton) Button mEyesButton;
     @Bind(R.id.dragonButton) Button mDragonButton;
     @Bind(R.id.binoButton) Button mBinoButton;
     @Bind(R.id.purseButton) Button mPurseButton;
@@ -43,12 +42,12 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
         youWin = 0;
         winNumber = 6;
-        mTestButton.setOnClickListener(this);
-        mDragonButton.setOnClickListener(this);
+//        mEyesButton.setOnClickListener(this);
+//        mDragonButton.setOnClickListener(this);
         mSpiderButton.setOnClickListener(this);
-        mPurseButton.setOnClickListener(this);
-        mFishButton.setOnClickListener(this);
-        mBinoButton.setOnClickListener(this);
+//        mPurseButton.setOnClickListener(this);
+//        mFishButton.setOnClickListener(this);
+//        mBinoButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 60;
@@ -80,41 +79,42 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if(view == mTestButton) {
-            Log.d("Winning", "sehn");
-            mTestButton.setOnClickListener(null);
-            advance(youWin);
-        }
-
-        if (view == mDragonButton){
-            Log.d("Dragons", "everywhere");
-            mDragonButton.setOnClickListener(null);
-            advance(youWin);
-        }
-
-        if(view == mBinoButton) {
-            Log.d("Bino", "Win");
-            mBinoButton.setOnClickListener(null);
-            advance(youWin);
-        }
-
-        if(view == mFishButton) {
-            Log.d("Fish", "Just Keep Swimming");
-            mFishButton.setOnClickListener(null);
-            advance(youWin);
-        }
-
-        if(view == mPurseButton) {
-            Log.d("purse", "Purse button...");
-            mPurseButton.setOnClickListener(null);
-            advance(youWin);
-        }
 
         if(view == mSpiderButton) {
             Log.d("Spider", "Ahhh!");
-            mSpiderButton.setOnClickListener(null);
+            advance(youWin);
+            mEyesButton.setOnClickListener(this);
+        }
+
+        if(view == mEyesButton) {
+            Log.d("Winning", "sehn");
+            advance(youWin);
+            mDragonButton.setOnClickListener(this);
+        }
+
+        if (view == mDragonButton){
+            Log.d("Dragon", "in my neighbor's garage");
+            advance(youWin);
+            mBinoButton.setOnClickListener(this);
+        }
+
+        if(view == mBinoButton) {
+            Log.d("Bino?", " More like bi-winning");
+            advance(youWin);
+            mFishButton.setOnClickListener(this);
+        }
+
+        if(view == mFishButton) {
+            Log.d("Fish ", "Just Keep Swimming");
+            advance(youWin);
+            mPurseButton.setOnClickListener(this);
+        }
+
+        if(view == mPurseButton) {
+            Log.d("purse ", "git munny");
             advance(youWin);
         }
+        view.setOnClickListener(null);
     }
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
