@@ -91,7 +91,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             advance(youWin);
         }
         if (view == mHatButton) {
-            Toast.makeText(getApplicationContext(), "topothemornintoya", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "topo'themornintoya", Toast.LENGTH_SHORT).show();
             mYarnButton.setOnClickListener(this);
             advance(youWin);
         }

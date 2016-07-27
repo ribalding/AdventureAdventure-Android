@@ -1,5 +1,6 @@
 package com.epicodus.imagesearch;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.epicodus.imagesearch.ui.KitchenActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -71,51 +74,58 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
+//    mCrownButton.setOnClickListener(this);
+//    mCatsGameButton.setOnClickListener(this);
+
+
 
 
     @Override
     public void onClick(View view) {
         if (view == mButterflyButton ) {
             Toast.makeText(getApplicationContext(), "Butterfly", Toast.LENGTH_SHORT).show();
-            mCrownButton.setOnClickListener(this);
-            advance(youWin);
-        }
-        if (view == mCrownButton) {
-            Toast.makeText(getApplicationContext(), "Tweet!", Toast.LENGTH_SHORT).show();
-            mHeartButton.setOnClickListener(this);
-            advance(youWin);
-        }
-        if (view == mHeartButton) {
-            Toast.makeText(getApplicationContext(), "tree lover", Toast.LENGTH_SHORT).show();
-            mSquirrelButton.setOnClickListener(this);
-            advance(youWin);
-        }
-        if (view == mSquirrelButton) {
-            Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
             mCucumber.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mCucumber) {
             Toast.makeText(getApplicationContext(), "Is this even a cucumber?", Toast.LENGTH_SHORT).show();
+            mHeartButton.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mHeartButton) {
+            Toast.makeText(getApplicationContext(), "tree lover", Toast.LENGTH_SHORT).show();
+            mCrownButton.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mCrownButton) {
+            Toast.makeText(getApplicationContext(), "Tweet!", Toast.LENGTH_SHORT).show();
             mCatsGameButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mCatsGameButton) {
             Toast.makeText(getApplicationContext(), "Possibly an even worse game than this one", Toast.LENGTH_SHORT).show();
+            mSquirrelButton.setOnClickListener(this);
             advance(youWin);
         }
+        if (view == mSquirrelButton) {
+            Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
+            advance(youWin);
+        }
+
         view.setOnClickListener(null);
     }
 
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(SecretGardenActivity.this, KitchenActivity.class);
+        startActivity(intent);
         mTimer.cancel();
     }
 
     private void advance(int stage) {
-        if (stage == 6 && timeRemaining != 0) {
+        if (stage == 6) {
             winFunction();
-        } else if (timeRemaining != 0) {
+        } else {
             mHintView.setText(Constants.GARDEN_HINTS[stage]);
             youWin ++;
         }
