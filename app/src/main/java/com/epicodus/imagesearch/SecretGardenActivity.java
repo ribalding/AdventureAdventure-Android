@@ -1,5 +1,8 @@
 package com.epicodus.imagesearch;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,8 +29,10 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     private Integer winNumber;
     Timer mTimer;
     TimerTask task;
-    Integer timeRemaining;
+    Integer timeElapsed;
     private TextView mTimerView;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +50,17 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         mCucumber.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
-        timeRemaining = 10;
+        timeElapsed = 0;
         task = new TimerTask() {
             @Override
             public void run() {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        timeRemaining --;
-                        System.out.println(timeRemaining);
-                        mTimerView.setText(timeRemaining.toString());
-                        if (timeRemaining == 0) {
+                        timeElapsed --;
+                        System.out.println(timeElapsed);
+                        mTimerView.setText(timeElapsed.toString());
+                        if (timeElapsed == 0) {
                             mTimer.cancel();
                             mTimer.purge();
                             Toast.makeText(getApplicationContext(), "FAILURE!", Toast.LENGTH_LONG).show();
@@ -131,6 +136,15 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
 
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
+        mEditor.putInt("timeScore", timeElapsed).apply();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
+        Intent intent = new Intent(SecretGardenActivity.this, KitchenActivity.class);
+        startActivity(intent);
+    }
     }
 }
