@@ -6,12 +6,6 @@
     tools:context="com.epicodus.imagesearch.ui.EgyptActivity"
     android:background="@drawable/egypt_level">
 
-    <TextView
-        android:id="@+id/timerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
 
     <TextView
         android:layout_width="0dp"
@@ -26,6 +20,19 @@
         android:layout_above="@+id/center"
         android:layout_centerHorizontal="true"
         android:id="@+id/layoutTop">
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="DIS B where the hint go"
+            android:textAlignment="center"
+            android:id="@+id/hintView"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/gold_banner"
+            android:layout_marginRight="79dp"
+            android:layout_marginEnd="79dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -61,7 +68,26 @@
                 android:layout_alignBottom="@+id/topLeftCenter"
                 android:layout_toLeftOf="@+id/topLeftCenter"
                 android:layout_toStartOf="@+id/topLeftCenter"
-                android:id="@+id/layoutOne"></RelativeLayout>
+                android:id="@+id/layoutOne">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/centerOne"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                android:id="@+id/timerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Timer Goes Here"
+                android:background="@drawable/gold_circle"
+                android:layout_alignBottom="@+id/centerOne"
+                android:layout_alignRight="@+id/centerOne"
+                android:layout_alignEnd="@+id/centerOne"
+                android:layout_marginRight="15dp" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -82,7 +108,9 @@
                 android:layout_below="@+id/topLeftCenter"
                 android:layout_alignRight="@+id/topLeftCenter"
                 android:layout_alignEnd="@+id/topLeftCenter"
-                android:id="@+id/layoutFive"></RelativeLayout>
+                android:id="@+id/layoutFive">
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -114,13 +142,10 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/layoutThree"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignBottom="@+id/topRightCenter"
-                android:layout_toLeftOf="@+id/topRightCenter"
-                android:layout_toStartOf="@+id/topRightCenter"
-                android:id="@+id/layoutThree">
+                android:layout_alignParentStart="true">
 
             </RelativeLayout>
 
@@ -132,18 +157,6 @@
                 android:layout_toEndOf="@+id/layoutThree"
                 android:id="@+id/layoutFour">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="DIS B where the hint go"
-                    android:id="@+id/hintView"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"/>
             </RelativeLayout>
 
             <RelativeLayout

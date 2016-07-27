@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.epicodus.imagesearch.ui.KitchenActivity;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -145,6 +147,5 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         mTimer.cancel();
         Intent intent = new Intent(SecretGardenActivity.this, KitchenActivity.class);
         startActivity(intent);
-    }
     }
 }
