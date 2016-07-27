@@ -116,6 +116,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         }
         view.setOnClickListener(null);
     }
+
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mTimer.cancel();
