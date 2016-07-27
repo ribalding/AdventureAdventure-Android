@@ -6,7 +6,7 @@ public class Constants {
             "Windows to the soul.",
             "Rock lizard.",
             "Dual spyglass.",
-            "Rock in the pool\nSo ncie and cool\nSo juicy sweet!\nSo nice to eat!",
+            "Rock in the pool So nice and cool\nSo juicy sweet! So nice to eat!",
             "Currency repository"
     };
 
@@ -22,10 +22,10 @@ public class Constants {
     public static final String[] TROPHY_HINTS = {
             "Let's hope this is made of glass.",
             "Wilson's face.",
-            "Telling a good story is also spinning a good one of these...",
+            "Telling a good story is also spinning \n a good one of these...",
             "A sophisticated lid for your HEED.",
             "A gallows for worms.",
-            "At hom on a corkboard."
+            "At home on a corkboard."
     };
 
 }

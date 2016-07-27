@@ -77,7 +77,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         if (view == mButterflyButton ) {
             Toast.makeText(getApplicationContext(), "Butterfly", Toast.LENGTH_SHORT).show();
-            mDoveButton.setOnClickListener(this);
+            mCrownButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mCrownButton) {

@@ -1,11 +1,9 @@
 package com.epicodus.imagesearch.ui;
 
-<<<<<<< HEAD
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-=======
->>>>>>> hints
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,7 +56,6 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeElapsed = 0;
 
-        advance(youWin);
         task = new TimerTask() {
             @Override
             public void run() {
@@ -76,10 +73,12 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
 
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
+        advance(youWin);
     }
 
     @Override
     public void onClick(View view) {
+
         if(view == mSpiderButton) {
             advance(youWin);
             mEyesButton.setOnClickListener(this);
@@ -109,7 +108,6 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
             mPurseButton.setOnClickListener(null);
             advance(youWin);
         }
-
         view.setOnClickListener(null);
     }
 
@@ -127,11 +125,13 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void advance(int stage) {
-        if (stage == 5 && timeElapsed != 0) {
+        if (stage == 6) {
             winFunction();
-        } else if (timeElapsed != 0) {
+        } else {
+
             mHintView.setText(Constants.EGYPT_HINTS[stage]);
-            youWin ++;
+            youWin++;
         }
+
     }
 }
