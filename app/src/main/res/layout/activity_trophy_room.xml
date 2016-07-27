@@ -21,6 +21,19 @@
         android:id="@+id/layoutTop">
 
         <TextView
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="DIS B where the hint go"
+            android:textAlignment="center"
+            android:id="@+id/kitchenHintView"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/gold_banner"
+            android:layout_marginRight="79dp"
+            android:layout_marginEnd="79dp" />
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/topCenter"
@@ -56,15 +69,6 @@
                 android:layout_toStartOf="@+id/topLeftCenter"
                 android:id="@+id/layoutOne">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="all the minutes"
-                    android:id="@+id/timerView"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -74,6 +78,18 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/timerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Timer Goes Here"
+                    android:textAlignment="center"
+                    android:background="@drawable/gold_circle"
+                    android:layout_alignBottom="@+id/oneCenter"
+                    android:layout_alignRight="@+id/oneCenter"
+                    android:layout_alignEnd="@+id/oneCenter"
+                    android:layout_marginRight="15dp" />
 
                 <Button
                     style="?android:attr/buttonStyleSmall"

@@ -78,15 +78,16 @@
                     android:layout_centerHorizontal="true" />
 
                 <TextView
-                android:id="@+id/timerView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Timer Goes Here"
-                android:background="@drawable/gold_circle"
-                android:layout_alignBottom="@+id/centerOne"
-                android:layout_alignRight="@+id/centerOne"
-                android:layout_alignEnd="@+id/centerOne"
-                android:layout_marginRight="15dp" />
+                    android:id="@+id/timerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Timer Goes Here"
+                    android:textAlignment="center"
+                    android:background="@drawable/gold_circle"
+                    android:layout_alignBottom="@+id/centerOne"
+                    android:layout_alignRight="@+id/centerOne"
+                    android:layout_alignEnd="@+id/centerOne"
+                    android:layout_marginRight="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -194,7 +195,7 @@
                     android:id="@+id/spiderButton"
                     android:layout_alignTop="@+id/eightCenter"
                     android:layout_centerHorizontal="true"
-                    android:background="#FFFFFF"
+                    android:background="#00FFFFFF"
                     android:singleLine="true"
                     android:layout_marginTop="10dp" />
             </RelativeLayout>
@@ -247,7 +248,7 @@
                     android:id="@+id/binoButton"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:background="#FFFFFF"
+                    android:background="#00FFFFFF"
                     android:layout_below="@+id/elevenCenter"
                     android:layout_marginTop="15dp" />
 
@@ -298,7 +299,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_marginRight="6dp" />
             </RelativeLayout>
 
@@ -338,7 +339,7 @@
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:id="@+id/dragonButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_x="120dp"
                     android:layout_y="216dp"
 
@@ -350,7 +351,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/eyesButton"
-                    android:background="#ffffff"
+                    android:background="#00ffffff"
                     android:layout_x="39dp"
                     android:layout_y="183dp"
                     android:layout_toRightOf="@+id/dragonButton"
@@ -388,7 +389,7 @@
                     android:layout_toStartOf="@+id/textView"
                     android:layout_above="@+id/textView"
                     android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF" />
+                    android:background="#00FFFFFF" />
             </RelativeLayout>
 
             <RelativeLayout

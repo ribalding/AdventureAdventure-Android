@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 public class SecretGardenActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Bind(R.id.butterflyButton) Button mButterflyButton;
-    @Bind(R.id.doveButton) Button mDoveButton;
+    @Bind(R.id.crownButton) Button mCrownButton;
     @Bind(R.id.heartButton) Button mHeartButton;
     @Bind(R.id.catsGameButton) Button mCatsGameButton;
     @Bind(R.id.squirrelButton) Button mSquirrelButton;
@@ -38,7 +38,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         winNumber = 6;
 
         mButterflyButton.setOnClickListener(this);
-        mDoveButton.setOnClickListener(this);
+        mCrownButton.setOnClickListener(this);
         mHeartButton.setOnClickListener(this);
         mCatsGameButton.setOnClickListener(this);
         mSquirrelButton.setOnClickListener(this);
@@ -62,7 +62,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
                         }
                     }
                 });
-
             }
         };
 
@@ -82,10 +81,10 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
                 winFunction();
             }
         }
-        if (view == mDoveButton) {
+        if (view == mCrownButton) {
             Toast.makeText(getApplicationContext(), "Tweet!", Toast.LENGTH_SHORT).show();
             Log.d("You clicked: ", "Dove");
-            mDoveButton.setOnClickListener(null);
+            mCrownButton.setOnClickListener(null);
             youWin ++;
             if (youWin.equals(winNumber)) {
                 winFunction();

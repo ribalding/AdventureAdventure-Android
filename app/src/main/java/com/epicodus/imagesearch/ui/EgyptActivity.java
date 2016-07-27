@@ -81,37 +81,31 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if(view == mTestButton) {
-            Log.d("Winning", "sehn");
             mTestButton.setOnClickListener(null);
             advance(youWin);
         }
 
         if (view == mDragonButton){
-            Log.d("Dragons", "everywhere");
             mDragonButton.setOnClickListener(null);
             advance(youWin);
         }
 
         if(view == mBinoButton) {
-            Log.d("Bino", "Win");
             mBinoButton.setOnClickListener(null);
             advance(youWin);
         }
 
         if(view == mFishButton) {
-            Log.d("Fish", "Just Keep Swimming");
             mFishButton.setOnClickListener(null);
             advance(youWin);
         }
 
         if(view == mPurseButton) {
-            Log.d("purse", "Purse button...");
             mPurseButton.setOnClickListener(null);
             advance(youWin);
         }
 
         if(view == mSpiderButton) {
-            Log.d("Spider", "Ahhh!");
             mSpiderButton.setOnClickListener(null);
             advance(youWin);
         }
