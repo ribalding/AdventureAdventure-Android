@@ -1,6 +1,8 @@
 package com.epicodus.imagesearch.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.imagesearch.R;
+import com.epicodus.imagesearch.SecretGardenActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,7 +34,9 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     private Integer winNumber;
     Timer mTimer;
     TimerTask task;
-    Integer timeRemaining;
+    Integer timeElapsed;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +53,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mYarnButton.setOnClickListener(this);
         mHookButton.setOnClickListener(this);
         mTimerView = (TextView) findViewById(R.id.timerView);
-        timeRemaining = 60;
+        timeElapsed = 0;
 
         task = new TimerTask() {
             @Override
@@ -56,10 +61,10 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        timeRemaining --;
-                        System.out.println(timeRemaining);
-                        mTimerView.setText(timeRemaining.toString());
-                        if (timeRemaining == 0) {
+                        timeElapsed ++;
+                        System.out.println(timeElapsed);
+                        mTimerView.setText(timeElapsed.toString());
+                        if (timeElapsed == 0) {
                             mTimer.cancel();
                             mTimer.purge();
                             Toast.makeText(getApplicationContext(), "FAILURE!", Toast.LENGTH_LONG).show();
@@ -81,7 +86,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "OW MY EYE", Toast.LENGTH_SHORT).show();
             mEyeButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
+            if (youWin.equals(winNumber) && timeElapsed != 0) {
                 winFunction();
             }
         }
@@ -89,7 +94,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "topothemornintoya", Toast.LENGTH_SHORT).show();
             mHatButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
+            if (youWin.equals(winNumber) && timeElapsed != 0) {
                 winFunction();
             }
         }
@@ -97,7 +102,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Such ominous", Toast.LENGTH_SHORT).show();
             mHandprintButton.setOnClickListener(null);
             youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
+            if (youWin.equals(winNumber) && timeElapsed != 0) {
                 winFunction();
             }
         }
@@ -105,7 +110,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Very Yarn", Toast.LENGTH_SHORT).show();
             mYarnButton.setOnClickListener(null);
             youWin ++;
-            if(youWin.equals(winNumber) && timeRemaining != 0){
+            if(youWin.equals(winNumber) && timeElapsed != 0){
                 winFunction();
             }
         }
@@ -114,7 +119,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
             mHookButton.setOnClickListener(null);
             youWin ++;
-            if(youWin.equals(winNumber) && timeRemaining != 0){
+            if(youWin.equals(winNumber) && timeElapsed != 0){
                 winFunction();
             }
         }
@@ -123,7 +128,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
             mPinsButton.setOnClickListener(null);
             youWin ++;
-            if(youWin.equals(winNumber) && timeRemaining != 0){
+            if(youWin.equals(winNumber) && timeElapsed != 0){
                 winFunction();
             }
         }
@@ -132,6 +137,10 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
 
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        mEditor.putInt("timeScore", timeElapsed).apply();
+        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(TrophyRoomActivity.this, EgyptActivity.class);
         startActivity(intent);
