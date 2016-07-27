@@ -194,7 +194,7 @@
                     android:id="@+id/spiderButton"
                     android:layout_alignTop="@+id/eightCenter"
                     android:layout_centerHorizontal="true"
-                    android:background="#00FFFFFF"
+                    android:background="#FFFFFF"
                     android:singleLine="true"
                     android:layout_marginTop="10dp" />
             </RelativeLayout>
@@ -247,7 +247,7 @@
                     android:id="@+id/binoButton"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:background="#00FFFFFF"
+                    android:background="#FFFFFF"
                     android:layout_below="@+id/elevenCenter"
                     android:layout_marginTop="15dp" />
 
@@ -298,7 +298,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:background="#00ffffff"
+                    android:background="#ffffff"
                     android:layout_marginRight="6dp" />
             </RelativeLayout>
 
@@ -338,7 +338,7 @@
                     android:layout_width="50dp"
                     android:layout_height="40dp"
                     android:id="@+id/dragonButton"
-                    android:background="#00ffffff"
+                    android:background="#ffffff"
                     android:layout_x="120dp"
                     android:layout_y="216dp"
 
@@ -350,7 +350,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/eyesButton"
-                    android:background="#00ffffff"
+                    android:background="#ffffff"
                     android:layout_x="39dp"
                     android:layout_y="183dp"
                     android:layout_toRightOf="@+id/dragonButton"
@@ -388,7 +388,7 @@
                     android:layout_toStartOf="@+id/textView"
                     android:layout_above="@+id/textView"
                     android:layout_marginBottom="10dp"
-                    android:background="#00FFFFFF" />
+                    android:background="#FFFFFF" />
             </RelativeLayout>
 
             <RelativeLayout
