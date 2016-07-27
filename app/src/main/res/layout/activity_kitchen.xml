@@ -26,6 +26,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="DIS B where the hint go"
             android:textAlignment="center"
+            android:textSize="11dp"
+            android:textColor="#000"
             android:id="@+id/kitchenHintView"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"

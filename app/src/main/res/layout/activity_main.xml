@@ -27,31 +27,28 @@
         android:layout_height="wrap_content"
         android:text="Start!"
         android:id="@+id/startButton"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/trophyRoomStartButton"
-        android:layout_alignBottom="@+id/startButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="MONEY Room" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/trophyRoomStartButton"-->
+        <!--android:layout_alignBottom="@+id/startButton"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:text="MONEY Room" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gardenButton"
-        android:text="Secret Garden"
-        android:layout_alignBottom="@+id/trophyRoomStartButton"
-        android:layout_toRightOf="@+id/trophyRoomStartButton"
-        android:layout_toEndOf="@+id/trophyRoomStartButton"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/gardenButton"-->
+        <!--android:text="Secret Garden"-->
+        <!--android:layout_alignBottom="@+id/trophyRoomStartButton"-->
+        <!--android:layout_toRightOf="@+id/trophyRoomStartButton"-->
+        <!--android:layout_toEndOf="@+id/trophyRoomStartButton"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:layout_marginStart="30dp" />-->
 
 
 </RelativeLayout>

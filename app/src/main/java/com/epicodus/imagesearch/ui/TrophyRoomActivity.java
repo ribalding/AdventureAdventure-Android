@@ -49,11 +49,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         winNumber = 6;
 
         mEyeButton.setOnClickListener(this);
-        mHatButton.setOnClickListener(this);
-        mHandprintButton.setOnClickListener(this);
-        mPinsButton.setOnClickListener(this);
-        mYarnButton.setOnClickListener(this);
-        mHookButton.setOnClickListener(this);
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeElapsed = 0;
 
@@ -65,12 +60,11 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void run() {
                         timeElapsed ++;
-                        System.out.println(timeElapsed);
+//                        System.out.println(timeElapsed);
                         mTimerView.setText(timeElapsed.toString());
                         if (timeElapsed == 0) {
                             mTimer.cancel();
                             mTimer.purge();
-                            Toast.makeText(getApplicationContext(), "FAILURE!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -105,18 +99,15 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             mHookButton.setOnClickListener(this);
             advance(youWin);
         }
-
         if(view == mHookButton){
             Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
             mPinsButton.setOnClickListener(this);
             advance(youWin);
         }
-
         if(view == mPinsButton){
             Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
             advance(youWin);
         }
-
         view.setOnClickListener(null);
     }
 
@@ -125,7 +116,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         mEditor.putInt("timeScore", timeElapsed).apply();
-        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
+//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(TrophyRoomActivity.this, EgyptActivity.class);
         startActivity(intent);

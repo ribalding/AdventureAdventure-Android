@@ -65,7 +65,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void run() {
                         timeElapsed ++;
-                        System.out.println(timeElapsed);
                         mTimerView.setText(timeElapsed.toString());
                     }
                 });
@@ -119,7 +118,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
         mEditor.putInt("timeScore", timeElapsed).apply();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
+//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(SecretGardenActivity.this, KitchenActivity.class);
         startActivity(intent);

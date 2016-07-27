@@ -2,12 +2,12 @@ package com.epicodus.imagesearch;
 
 public class Constants {
     public static final String[] EGYPT_HINTS = {
-            "Crawling up the wall, \n I found shelter from the light.",
-            "Windows to \n the soul.",
-            "Rock \n lizard.",
-            "Dual \n spyglass.",
+            "Crawling up the wall, \nI found shelter from the light.",
+            "Windows to \nthe soul.",
+            "Rock \nlizard.",
+            "Dual \nspyglass.",
             "Rock in the pool. So nice and cool.\nSo juicy sweet! So nice to eat!",
-            "Currency \n repository"
+            "Currency \nrepository"
     };
 
     public static final String[] GARDEN_HINTS = {
@@ -20,21 +20,21 @@ public class Constants {
     };
 
     public static final String[] TROPHY_HINTS = {
-            "Let's hope this is \n made of glass.",
-            "Wilson's \n face.",
-            "Telling a good story is also spinning \n a good one of these...",
-            "A sophisticated lid \n for your HEED.",
-            "A gallows \n for worms.",
-            "At home on \n a corkboard."
+            "Let's hope this is \nmade of glass.",
+            "Wilson's \nface.",
+            "A sophisticated lid \nfor your HEED.",
+            "Telling a good story is also spinning \na good one of these...",
+            "A gallows \nfor worms.",
+            "At home on \na corkboard."
     };
 
     public static final String[] KITCHEN_HINTS = {
-            "Timon's best \n friend.",
-            "Food goes in, \n water comes out.",
-            "Here come \n dat boi!",
-            "Don't \n cry.",
-            "The best part \n of waking up.",
-            "In the sky and \n under the sea."
+            "Here come \ndat boi!",
+            "The best part \nof waking up.",
+            "In the sky and \nunder the sea.",
+            "Don't \ncry.",
+            "Food goes in, \nwater comes out.",
+            "Timon's best \nfriend."
     };
 
 }

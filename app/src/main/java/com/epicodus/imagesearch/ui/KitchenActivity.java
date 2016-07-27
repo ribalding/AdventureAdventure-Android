@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
 import com.epicodus.imagesearch.SecretGardenActivity;
 
@@ -29,6 +30,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.pigButton) Button mPigButton;
     @Bind(R.id.strainerButton) Button mStrainerButton;
     @Bind(R.id.timerView) TextView mTimerView;
+    @Bind(R.id.hintView) TextView mHintView;
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -45,12 +47,8 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         youWin = 0;
         winNumber = 6;
 
-        mCoffeeButton.setOnClickListener(this);
         mFrogButton.setOnClickListener(this);
-        mStarfishButton.setOnClickListener(this);
-        mPigButton.setOnClickListener(this);
-        mOnionButton.setOnClickListener(this);
-        mStrainerButton.setOnClickListener(this);
+
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeElapsed = 0;
 
@@ -61,7 +59,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void run() {
                         timeElapsed ++;
-                        System.out.println(timeElapsed);
+//                        System.out.println(timeElapsed);
                         mTimerView.setText(timeElapsed.toString());
                         if (timeElapsed == 0) {
                             mTimer.cancel();
@@ -78,60 +76,56 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
 
-
     @Override
     public void onClick(View view) {
         if (view == mFrogButton ) {
             Toast.makeText(getApplicationContext(), "Ribbit", Toast.LENGTH_SHORT).show();
-            mFrogButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeElapsed != 0) {
-                winFunction();
+            mCoffeeButton.setOnClickListener(this);
+            if (youWin.equals(winNumber)) {
+                advance(youWin);
             }
         }
         if (view == mCoffeeButton) {
             Toast.makeText(getApplicationContext(), "Precious caffeine", Toast.LENGTH_SHORT).show();
-            mCoffeeButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeElapsed != 0) {
-                winFunction();
+            mStarfishButton.setOnClickListener(this);
+            if (youWin.equals(winNumber)) {
+                advance(youWin);
             }
         }
         if (view == mStarfishButton) {
             Toast.makeText(getApplicationContext(), "Twinkle twinkle", Toast.LENGTH_SHORT).show();
-            mStarfishButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeElapsed != 0) {
-                winFunction();
+            mOnionButton.setOnClickListener(this);
+            if (youWin.equals(winNumber)) {
+                advance(youWin);
             }
         }
         if (view == mOnionButton){
             Toast.makeText(getApplicationContext(), "Layers upon layers of oniony goodness", Toast.LENGTH_SHORT).show();
-            mOnionButton.setOnClickListener(null);
-            youWin ++;
-            if(youWin.equals(winNumber) && timeElapsed != 0){
-                winFunction();
+            mStrainerButton.setOnClickListener(this);
+            if(youWin.equals(winNumber)){
+                advance(youWin);
             }
         }
-
         if(view == mStrainerButton){
             Toast.makeText(getApplicationContext(), "I hope this game isn't too...straining", Toast.LENGTH_SHORT).show();
-            mStrainerButton.setOnClickListener(null);
-            youWin ++;
-            if(youWin.equals(winNumber) && timeElapsed != 0){
-                winFunction();
+            if(youWin.equals(winNumber)){
+                advance(youWin);
             }
         }
-
         if(view == mPigButton){
             Toast.makeText(getApplicationContext(), "Oink", Toast.LENGTH_SHORT).show();
-            mPigButton.setOnClickListener(null);
-            youWin ++;
-            if(youWin.equals(winNumber) && timeElapsed != 0){
-                winFunction();
+            if(youWin.equals(winNumber)){
+                advance(youWin);
             }
         }
-
+    }
+    private void advance(int stage) {
+        if (stage == 6) {
+            winFunction();
+        } else {
+            mHintView.setText(Constants.KITCHEN_HINTS[stage]);
+            youWin++;
+        }
     }
 
     private void winFunction(){
@@ -139,7 +133,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         mEditor.putInt("timeScore", timeElapsed).apply();
-        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
+//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(KitchenActivity.this, MainActivity.class);
         startActivity(intent);

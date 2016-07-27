@@ -26,7 +26,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="DIS B where the hint go"
             android:textAlignment="center"
-            android:id="@+id/kitchenHintView"
+            android:textColor="#000"
+            android:textSize="11dp"
+            android:id="@+id/hintView"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:background="@drawable/gold_banner"
@@ -194,14 +196,6 @@
                     android:layout_toStartOf="@+id/textView2"
                     android:background="#00FFFFFF" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="one two three for FIF"
-                    android:id="@+id/hintView"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <RelativeLayout
