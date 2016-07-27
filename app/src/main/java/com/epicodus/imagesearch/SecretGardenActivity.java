@@ -22,6 +22,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Bind(R.id.catsGameButton) Button mCatsGameButton;
     @Bind(R.id.squirrelButton) Button mSquirrelButton;
     @Bind(R.id.cucumberThingButton) Button mCucumber;
+    @Bind(R.id.hintView) TextView mHintView;
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -46,6 +47,8 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
+
+        advance(youWin);
         task = new TimerTask() {
             @Override
             public void run() {
@@ -74,62 +77,47 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         if (view == mButterflyButton ) {
             Toast.makeText(getApplicationContext(), "Butterfly", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "Butterfly");
-            mButterflyButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            mDoveButton.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mCrownButton) {
             Toast.makeText(getApplicationContext(), "Tweet!", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "Dove");
-            mCrownButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            mHeartButton.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mHeartButton) {
             Toast.makeText(getApplicationContext(), "tree lover", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The heart.");
-            mHeartButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            mSquirrelButton.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mSquirrelButton) {
             Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The squirrel.");
-            mHeartButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            mCucumber.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mCucumber) {
             Toast.makeText(getApplicationContext(), "Is this even a cucumber?", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The 'cuke.");
-            mHeartButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            mCatsGameButton.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mCatsGameButton) {
             Toast.makeText(getApplicationContext(), "Possibly an even worse game than this one", Toast.LENGTH_SHORT).show();
-            Log.d("You clicked: ", "The child's game.");
-            mHeartButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber)) {
-                winFunction();
-            }
+            advance(youWin);
         }
+        view.setOnClickListener(null);
     }
 
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mTimer.cancel();
+    }
+
+    private void advance(int stage) {
+        if (stage == 6 && timeRemaining != 0) {
+            winFunction();
+        } else if (timeRemaining != 0) {
+            mHintView.setText(Constants.GARDEN_HINTS[stage]);
+            youWin ++;
+        }
     }
 }

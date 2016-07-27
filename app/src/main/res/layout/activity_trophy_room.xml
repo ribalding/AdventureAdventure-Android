@@ -193,6 +193,15 @@
                     android:layout_toLeftOf="@+id/textView2"
                     android:layout_toStartOf="@+id/textView2"
                     android:background="#00FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="one two three for FIF"
+                    android:id="@+id/hintView"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <RelativeLayout

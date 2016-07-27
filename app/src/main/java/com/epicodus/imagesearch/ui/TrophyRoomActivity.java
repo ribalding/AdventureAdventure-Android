@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
 
 import java.util.Timer;
@@ -27,6 +28,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     @Bind(R.id.pinsButton) Button mPinsButton;
     @Bind(R.id.hookButton) Button mHookButton;
     @Bind(R.id.timerView) TextView mTimerView;
+    @Bind(R.id.hintView) TextView mHintView;
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -50,6 +52,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 60;
 
+        advance(youWin);
         task = new TimerTask() {
             @Override
             public void run() {
@@ -79,55 +82,37 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         if (view == mEyeButton ) {
             Toast.makeText(getApplicationContext(), "OW MY EYE", Toast.LENGTH_SHORT).show();
-            mEyeButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
-        }
-        if (view == mHatButton) {
-            Toast.makeText(getApplicationContext(), "topothemornintoya", Toast.LENGTH_SHORT).show();
-            mHatButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            mHandprintButton.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mHandprintButton) {
             Toast.makeText(getApplicationContext(), "Such ominous", Toast.LENGTH_SHORT).show();
-            mHandprintButton.setOnClickListener(null);
-            youWin ++;
-            if (youWin.equals(winNumber) && timeRemaining != 0) {
-                winFunction();
-            }
+            mHatButton.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mHatButton) {
+            Toast.makeText(getApplicationContext(), "topothemornintoya", Toast.LENGTH_SHORT).show();
+            mYarnButton.setOnClickListener(this);
+            advance(youWin);
         }
         if (view == mYarnButton){
             Toast.makeText(getApplicationContext(), "Very Yarn", Toast.LENGTH_SHORT).show();
-            mYarnButton.setOnClickListener(null);
-            youWin ++;
-            if(youWin.equals(winNumber) && timeRemaining != 0){
-                winFunction();
-            }
+            mHookButton.setOnClickListener(this);
+            advance(youWin);
         }
 
         if(view == mHookButton){
             Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
-            mHookButton.setOnClickListener(null);
-            youWin ++;
-            if(youWin.equals(winNumber) && timeRemaining != 0){
-                winFunction();
-            }
+            mPinsButton.setOnClickListener(this);
+            advance(youWin);
         }
 
         if(view == mPinsButton){
             Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
-            mPinsButton.setOnClickListener(null);
-            youWin ++;
-            if(youWin.equals(winNumber) && timeRemaining != 0){
-                winFunction();
-            }
+            advance(youWin);
         }
 
+        view.setOnClickListener(null);
     }
 
     private void winFunction(){
@@ -135,5 +120,13 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mTimer.cancel();
         Intent intent = new Intent(TrophyRoomActivity.this, EgyptActivity.class);
         startActivity(intent);
+    }
+    private void advance(int stage) {
+        if (stage == 6 && timeRemaining != 0) {
+            winFunction();
+        } else if (timeRemaining != 0) {
+            mHintView.setText(Constants.TROPHY_HINTS[stage]);
+            youWin ++;
+        }
     }
 }
