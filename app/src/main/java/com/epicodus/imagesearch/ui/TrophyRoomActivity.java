@@ -1,6 +1,8 @@
 package com.epicodus.imagesearch.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
+import com.epicodus.imagesearch.SecretGardenActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -33,7 +36,9 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     private Integer winNumber;
     Timer mTimer;
     TimerTask task;
-    Integer timeRemaining;
+    Integer timeElapsed;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +55,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mYarnButton.setOnClickListener(this);
         mHookButton.setOnClickListener(this);
         mTimerView = (TextView) findViewById(R.id.timerView);
-        timeRemaining = 60;
+        timeElapsed = 0;
 
         advance(youWin);
         task = new TimerTask() {
@@ -59,10 +64,10 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        timeRemaining --;
-                        System.out.println(timeRemaining);
-                        mTimerView.setText(timeRemaining.toString());
-                        if (timeRemaining == 0) {
+                        timeElapsed ++;
+                        System.out.println(timeElapsed);
+                        mTimerView.setText(timeElapsed.toString());
+                        if (timeElapsed == 0) {
                             mTimer.cancel();
                             mTimer.purge();
                             Toast.makeText(getApplicationContext(), "FAILURE!", Toast.LENGTH_LONG).show();
@@ -117,14 +122,18 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
 
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        mEditor.putInt("timeScore", timeElapsed).apply();
+        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(TrophyRoomActivity.this, EgyptActivity.class);
         startActivity(intent);
     }
     private void advance(int stage) {
-        if (stage == 6 && timeRemaining != 0) {
+        if (stage == 6) {
             winFunction();
-        } else if (timeRemaining != 0) {
+        } else {
             mHintView.setText(Constants.TROPHY_HINTS[stage]);
             youWin ++;
         }

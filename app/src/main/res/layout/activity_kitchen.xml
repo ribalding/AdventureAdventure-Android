@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.imagesearch.ui.EgyptActivity"
+    tools:context="com.epicodus.imagesearch.ui.KitchenActivity"
     android:background="@drawable/kitchen">
 
     <TextView
