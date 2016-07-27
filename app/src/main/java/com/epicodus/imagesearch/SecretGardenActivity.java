@@ -47,6 +47,8 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
 
         mTimerView = (TextView) findViewById(R.id.timerView);
         timeRemaining = 10;
+
+        advance(youWin);
         task = new TimerTask() {
             @Override
             public void run() {
