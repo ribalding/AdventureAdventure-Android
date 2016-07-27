@@ -1,6 +1,8 @@
 package com.epicodus.imagesearch.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
+import com.epicodus.imagesearch.SecretGardenActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,10 +24,12 @@ import butterknife.ButterKnife;
 public class EgyptActivity extends AppCompatActivity implements View.OnClickListener {
     private Integer youWin;
     private Integer winNumber;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     Timer mTimer;
     TimerTask task;
-    Integer timeRemaining;
+    Integer timeElapsed;
     private TextView mTimerView;
     @Bind(R.id.eyesButton) Button mTestButton;
     @Bind(R.id.dragonButton) Button mDragonButton;
@@ -51,7 +56,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         mBinoButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
-        timeRemaining = 60;
+        timeElapsed = 0;
 
         advance(youWin);
         task = new TimerTask() {
@@ -60,14 +65,9 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        timeRemaining --;
-                        System.out.println(timeRemaining);
-                        mTimerView.setText(timeRemaining.toString());
-                        if (timeRemaining == 0) {
-                            mTimer.cancel();
-                            mTimer.purge();
-                            Toast.makeText(getApplicationContext(), "FAILURE!", Toast.LENGTH_LONG).show();
-                        }
+                        timeElapsed ++;
+                        System.out.println(timeElapsed);
+                        mTimerView.setText(timeElapsed.toString());
                     }
                 });
 
@@ -118,13 +118,21 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     }
     private void winFunction(){
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
+        mEditor.putInt("timeScore", timeElapsed).apply();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
+        Intent intent = new Intent(EgyptActivity.this, SecretGardenActivity.class);
+        startActivity(intent);
     }
 
     private void advance(int stage) {
-        if (stage == 6 && timeRemaining != 0) {
+        if (stage == 5 && timeElapsed != 0) {
             winFunction();
-        } else if (timeRemaining != 0) {
+        } else if (timeElapsed != 0) {
             mHintView.setText(Constants.EGYPT_HINTS[stage]);
             youWin ++;
         }
