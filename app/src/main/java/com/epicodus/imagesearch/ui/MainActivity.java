@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.welcomeImageView) ImageView mWelcomeImageView;
     @Bind(R.id.startButton) Button mStartButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
+    @Bind(R.id.winScreenTestButton) Button mWinTestButton;
 //    @Bind(R.id.trophyRoomStartButton) Button mTrophyRoomButton;
 //    @Bind(R.id.gardenButton) Button mGardenButton;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
         Picasso.with(this).load(R.drawable.welcome_image).fit().into(mWelcomeImageView);
         mStartButton.setOnClickListener(this);
+        mWinTestButton.setOnClickListener(this);
 //        mTrophyRoomButton.setOnClickListener(this);
 //        mGardenButton.setOnClickListener(this);
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
@@ -41,6 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == mStartButton) {
             Intent intent = new Intent(MainActivity.this, TrophyRoomActivity.class);
             startActivity(intent);
+        }
+
+        if(view  == mWinTestButton) {
+            Intent winIntent = new Intent(MainActivity.this, WinScreenActivity.class);
+            startActivity(winIntent);
         }
 //        if (view == mTrophyRoomButton) {
 //            Intent intent = new Intent(MainActivity.this, TrophyRoomActivity.class);
