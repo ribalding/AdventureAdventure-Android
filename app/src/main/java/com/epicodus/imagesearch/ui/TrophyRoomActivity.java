@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
 import com.epicodus.imagesearch.SecretGardenActivity;
+import com.github.lzyzsd.circleprogress.ArcProgress;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,6 +33,8 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     @Bind(R.id.hookButton) Button mHookButton;
     @Bind(R.id.timerView) TextView mTimerView;
     @Bind(R.id.hintView) TextView mHintView;
+    @Bind(R.id.arc_progress) ArcProgress mArc_Progress;
+
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -82,30 +85,36 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         if (view == mEyeButton ) {
             Toast.makeText(getApplicationContext(), "OW MY EYE", Toast.LENGTH_SHORT).show();
             mHandprintButton.setOnClickListener(this);
+            mArc_Progress.setProgress(3);
             advance(youWin);
         }
         if (view == mHandprintButton) {
             Toast.makeText(getApplicationContext(), "Such ominous", Toast.LENGTH_SHORT).show();
             mHatButton.setOnClickListener(this);
+            mArc_Progress.setProgress(7);
             advance(youWin);
         }
         if (view == mHatButton) {
             Toast.makeText(getApplicationContext(), "topo'themornintoya", Toast.LENGTH_SHORT).show();
             mYarnButton.setOnClickListener(this);
+            mArc_Progress.setProgress(10);
             advance(youWin);
         }
         if (view == mYarnButton){
             Toast.makeText(getApplicationContext(), "Very Yarn", Toast.LENGTH_SHORT).show();
             mHookButton.setOnClickListener(this);
+            mArc_Progress.setProgress(13);
             advance(youWin);
         }
         if(view == mHookButton){
             Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
             mPinsButton.setOnClickListener(this);
+            mArc_Progress.setProgress(16);
             advance(youWin);
         }
         if(view == mPinsButton){
             Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
+            mArc_Progress.setProgress(20);
             advance(youWin);
         }
         view.setOnClickListener(null);
