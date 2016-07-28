@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.startButton) Button mStartButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mStartButton.setOnClickListener(this);
+
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
         mWelcomeTextView.setTypeface(pacificoFont);
     }
@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == mStartButton) {
             Intent intent = new Intent(MainActivity.this, TrophyRoomActivity.class);
             startActivity(intent);
+        }
+
+        if(view  == mWinTestButton) {
+            Intent winIntent = new Intent(MainActivity.this, WinScreenActivity.class);
+            startActivity(winIntent);
         }
     }
 }
