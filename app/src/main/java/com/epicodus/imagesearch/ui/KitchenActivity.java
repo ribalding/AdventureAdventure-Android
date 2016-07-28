@@ -78,32 +78,26 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         if (view == mFrogButton ) {
-            Toast.makeText(getApplicationContext(), "Ribbit", Toast.LENGTH_SHORT).show();
             mCoffeeButton.setOnClickListener(this);
                 advance(youWin);
         }
         if (view == mCoffeeButton) {
-            Toast.makeText(getApplicationContext(), "Precious caffeine", Toast.LENGTH_SHORT).show();
             mStarfishButton.setOnClickListener(this);
                 advance(youWin);
         }
         if (view == mStarfishButton) {
-            Toast.makeText(getApplicationContext(), "Twinkle twinkle", Toast.LENGTH_SHORT).show();
             mOnionButton.setOnClickListener(this);
                 advance(youWin);
         }
         if (view == mOnionButton){
-            Toast.makeText(getApplicationContext(), "Layers upon layers of oniony goodness", Toast.LENGTH_SHORT).show();
             mStrainerButton.setOnClickListener(this);
                 advance(youWin);
         }
         if(view == mStrainerButton){
-            Toast.makeText(getApplicationContext(), "I hope this game isn't too...straining", Toast.LENGTH_SHORT).show();
             mPigButton.setOnClickListener(this);
                 advance(youWin);
         }
         if(view == mPigButton){
-            Toast.makeText(getApplicationContext(), "Oink", Toast.LENGTH_SHORT).show();
                 advance(youWin);
         }
     }
