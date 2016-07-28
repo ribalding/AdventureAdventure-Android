@@ -1,17 +1,17 @@
-package com.epicodus.imagesearch;
+package com.epicodus.imagesearch.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.epicodus.imagesearch.ui.KitchenActivity;
+import com.epicodus.imagesearch.Constants;
+import com.epicodus.imagesearch.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -47,11 +47,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         winNumber = 6;
 
         mButterflyButton.setOnClickListener(this);
-        mCrownButton.setOnClickListener(this);
-        mHeartButton.setOnClickListener(this);
-        mCatsGameButton.setOnClickListener(this);
-        mSquirrelButton.setOnClickListener(this);
-        mCucumber.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
 

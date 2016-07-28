@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.imagesearch.R;
-import com.epicodus.imagesearch.SecretGardenActivity;
 import com.squareup.picasso.Picasso;
 
 import butterknife.Bind;

@@ -22,9 +22,12 @@
             android:name=".ui.TrophyRoomActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SecretGardenActivity"
+            android:name=".ui.SecretGardenActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".ui.KitchenActivity"></activity>
+        <activity android:name=".ui.KitchenActivity" />
+        <activity android:name=".ui.AtticActivity"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>

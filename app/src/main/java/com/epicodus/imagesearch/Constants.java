@@ -37,4 +37,11 @@ public class Constants {
             "Timon's best \nfriend."
     };
 
+    public static final String[] ATTIC_HINTS = {
+            "Just add wax",
+            "Master Splinter",
+            "Crime Scene Slip Up",
+
+    };
+
 }

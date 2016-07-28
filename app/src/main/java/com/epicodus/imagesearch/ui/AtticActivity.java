@@ -1,6 +1,5 @@
 package com.epicodus.imagesearch.ui;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -20,38 +19,40 @@ import java.util.TimerTask;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class EgyptActivity extends AppCompatActivity implements View.OnClickListener {
+public class AtticActivity extends AppCompatActivity implements View.OnClickListener {
+
+    @Bind(R.id.mustacheButton) Button mMustacheButton;
+    @Bind(R.id.ratButton) Button mRatButton;
+    @Bind(R.id.fingerPrintButton) Button mFingerPrint;
+    @Bind(R.id.dynamiteButton) Button mDynamiteButton;
+    @Bind(R.id.cameraButton) Button mCameraButton;
+    @Bind(R.id.cigarButton) Button mCigarButton;
+
+    @Bind(R.id.hintView) TextView mHintView;
+
     private Integer youWin;
     private Integer winNumber;
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
-
     Timer mTimer;
     TimerTask task;
     Integer timeElapsed;
     private TextView mTimerView;
-    @Bind(R.id.eyesButton) Button mEyesButton;
-    @Bind(R.id.dragonButton) Button mDragonButton;
-    @Bind(R.id.binoButton) Button mBinoButton;
-    @Bind(R.id.purseButton) Button mPurseButton;
-    @Bind(R.id.spiderButton) Button mSpiderButton;
-    @Bind(R.id.fishButton) Button mFishButton;
-    @Bind(R.id.hintView) TextView mHintView;
-
-
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_egypt);
+        setContentView(R.layout.activity_secret_garden);
         ButterKnife.bind(this);
         youWin = 0;
         winNumber = 6;
 
-        mSpiderButton.setOnClickListener(this);
-
+        mMustacheButton.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
+
+        advance(youWin);
+
         timeElapsed = 0;
 
         task = new TimerTask() {
@@ -64,47 +65,40 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
                         mTimerView.setText(timeElapsed.toString());
                     }
                 });
-
             }
         };
 
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
-        advance(youWin);
     }
+
 
     @Override
     public void onClick(View view) {
-
-        if(view == mSpiderButton) {
-            advance(youWin);
-            mEyesButton.setOnClickListener(this);
-        }
-
-        if(view == mEyesButton) {
-            advance(youWin);
-            mDragonButton.setOnClickListener(this);
-        }
-
-        if (view == mDragonButton){
-            advance(youWin);
-            mBinoButton.setOnClickListener(this);
-        }
-
-        if(view == mBinoButton) {
-            advance(youWin);
-            mFishButton.setOnClickListener(this);
-        }
-
-        if(view == mFishButton) {
-            advance(youWin);
-            mPurseButton.setOnClickListener(this);
-        }
-
-        if(view == mPurseButton) {
-            mPurseButton.setOnClickListener(null);
+        if (view == mMustacheButton ) {
+            mRatButton.setOnClickListener(this);
             advance(youWin);
         }
+        if (view == mRatButton) {
+            mFingerPrint.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mFingerPrint) {
+            mDynamiteButton.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mDynamiteButton) {
+            mCameraButton.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mCameraButton) {
+            mCigarButton.setOnClickListener(this);
+            advance(youWin);
+        }
+        if (view == mCigarButton) {
+            advance(youWin);
+        }
+
         view.setOnClickListener(null);
     }
 
@@ -112,11 +106,12 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
+        timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
         mEditor.putInt("timeScore", timeElapsed).apply();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 //        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
-        Intent intent = new Intent(EgyptActivity.this, SecretGardenActivity.class);
+        Intent intent = new Intent(AtticActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -124,10 +119,8 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         if (stage == 6) {
             winFunction();
         } else {
-
-            mHintView.setText(Constants.EGYPT_HINTS[stage]);
-            youWin++;
+            mHintView.setText(Constants.GARDEN_HINTS[stage]);
+            youWin ++;
         }
-
     }
 }
