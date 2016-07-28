@@ -30,7 +30,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.pigButton) Button mPigButton;
     @Bind(R.id.strainerButton) Button mStrainerButton;
     @Bind(R.id.timerView) TextView mTimerView;
-    @Bind(R.id.hintView) TextView mHintView;
+    @Bind(R.id.kitchenHintView) TextView mHintView;
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -46,6 +46,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
         youWin = 0;
         winNumber = 6;
+        advance(0);
 
         mFrogButton.setOnClickListener(this);
 
@@ -81,42 +82,31 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         if (view == mFrogButton ) {
             Toast.makeText(getApplicationContext(), "Ribbit", Toast.LENGTH_SHORT).show();
             mCoffeeButton.setOnClickListener(this);
-            if (youWin.equals(winNumber)) {
                 advance(youWin);
-            }
         }
         if (view == mCoffeeButton) {
             Toast.makeText(getApplicationContext(), "Precious caffeine", Toast.LENGTH_SHORT).show();
             mStarfishButton.setOnClickListener(this);
-            if (youWin.equals(winNumber)) {
                 advance(youWin);
-            }
         }
         if (view == mStarfishButton) {
             Toast.makeText(getApplicationContext(), "Twinkle twinkle", Toast.LENGTH_SHORT).show();
             mOnionButton.setOnClickListener(this);
-            if (youWin.equals(winNumber)) {
                 advance(youWin);
-            }
         }
         if (view == mOnionButton){
             Toast.makeText(getApplicationContext(), "Layers upon layers of oniony goodness", Toast.LENGTH_SHORT).show();
             mStrainerButton.setOnClickListener(this);
-            if(youWin.equals(winNumber)){
                 advance(youWin);
-            }
         }
         if(view == mStrainerButton){
             Toast.makeText(getApplicationContext(), "I hope this game isn't too...straining", Toast.LENGTH_SHORT).show();
-            if(youWin.equals(winNumber)){
+            mPigButton.setOnClickListener(this);
                 advance(youWin);
-            }
         }
         if(view == mPigButton){
             Toast.makeText(getApplicationContext(), "Oink", Toast.LENGTH_SHORT).show();
-            if(youWin.equals(winNumber)){
                 advance(youWin);
-            }
         }
     }
     private void advance(int stage) {

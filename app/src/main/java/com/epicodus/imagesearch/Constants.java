@@ -11,12 +11,12 @@ public class Constants {
     };
 
     public static final String[] GARDEN_HINTS = {
-            "Insect \n royalty.",
-            "Not a bind or a jam, \n but a...",
-            "Has four \n chambers",
-            "Acorn \n hunter",
-            "Fit for a \n Ruler.",
-            "Hugs and kisses, \n but nobody wins."
+            "Insect \nroyalty.",
+            "Not a bind or a jam, \nbut a...",
+            "Has four \nchambers",
+            "Acorn \nhunter",
+            "Fit for a \nRuler.",
+            "Hugs and kisses, \nbut nobody wins."
     };
 
     public static final String[] TROPHY_HINTS = {
