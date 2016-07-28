@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,8 +12,10 @@ import android.widget.Toast;
 
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
-import com.epicodus.imagesearch.SecretGardenActivity;
+
+import com.epicodus.imagesearch.ui.SecretGardenActivity;
 import com.github.lzyzsd.circleprogress.ArcProgress;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -126,9 +127,8 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         mEditor.putInt("timeScore", timeElapsed).apply();
-//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
-        Intent intent = new Intent(KitchenActivity.this, MainActivity.class);
+        Intent intent = new Intent(KitchenActivity.this, AtticActivity.class);
         startActivity(intent);
     }
 }

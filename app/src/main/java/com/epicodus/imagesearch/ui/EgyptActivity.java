@@ -6,16 +6,15 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
-import com.epicodus.imagesearch.SecretGardenActivity;
+import com.epicodus.imagesearch.ui.SecretGardenActivity;
 import com.github.lzyzsd.circleprogress.ArcProgress;
+
 
 import java.util.Timer;
 import java.util.TimerTask;

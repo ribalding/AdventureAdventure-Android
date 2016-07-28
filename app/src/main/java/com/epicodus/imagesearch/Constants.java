@@ -14,9 +14,9 @@ public class Constants {
             "Insect \nroyalty.",
             "Not a bind or a jam, \nbut a...",
             "Has four \nchambers",
-            "Acorn \nhunter",
             "Fit for a \nRuler.",
-            "Hugs and kisses, \nbut nobody wins."
+            "Hugs and kisses, \nbut nobody wins",
+            "Acorn \nhunter"
     };
 
     public static final String[] TROPHY_HINTS = {
@@ -35,6 +35,16 @@ public class Constants {
             "Don't \ncry.",
             "Food goes in, \nwater comes out.",
             "Timon's best \nfriend."
+    };
+
+    public static final String[] ATTIC_HINTS = {
+            "Just add wax",
+            "Master Splinter",
+            "Crime Scene Slip Up",
+            "Nitroglycerin With An \nAbsorbent and a Stabilizer",
+            "Strike A Pose",
+            "Cuba Libre"
+
     };
 
 }
