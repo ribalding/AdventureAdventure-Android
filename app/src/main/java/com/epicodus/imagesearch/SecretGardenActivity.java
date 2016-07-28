@@ -28,6 +28,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Bind(R.id.squirrelButton) Button mSquirrelButton;
     @Bind(R.id.cucumberThingButton) Button mCucumber;
     @Bind(R.id.hintView) TextView mHintView;
+
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
