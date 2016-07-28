@@ -113,6 +113,7 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void winFunction(){
+        Toast.makeText(getApplicationContext(), "Your time for this level is " + timeElapsed + " seconds!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         timeElapsed += mSharedPreferences.getInt("timeScore", 1000);

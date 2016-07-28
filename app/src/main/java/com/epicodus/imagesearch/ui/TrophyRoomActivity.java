@@ -63,7 +63,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void run() {
                         timeElapsed ++;
-//                        System.out.println(timeElapsed);
                         mTimerView.setText(timeElapsed.toString());
                         if (timeElapsed == 0) {
                             mTimer.cancel();
@@ -78,7 +77,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
-
 
     @Override
     public void onClick(View view) {
@@ -115,7 +113,7 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void winFunction(){
-        Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Your time for this level is " + timeElapsed + " seconds!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         mEditor.putInt("timeScore", timeElapsed).apply();

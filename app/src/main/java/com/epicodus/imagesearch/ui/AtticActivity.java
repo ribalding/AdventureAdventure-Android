@@ -113,7 +113,7 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void winFunction(){
-        Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Your time for this level is " + timeElapsed + " seconds!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         timeElapsed += mSharedPreferences.getInt("timeScore", 1000);

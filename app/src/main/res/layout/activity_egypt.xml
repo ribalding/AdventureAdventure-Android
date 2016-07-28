@@ -80,16 +80,31 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true" />
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/gold_circle"
+                    android:background="#00ffffff"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/imageView"
+                    android:layout_alignRight="@+id/centerOne"
+                    android:layout_alignEnd="@+id/centerOne" />
+
                 <TextView
                     android:id="@+id/timerView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Timer Goes Here"
+                    android:text="0"
                     android:textAlignment="center"
-                    android:layout_alignBottom="@+id/centerOne"
-                    android:layout_alignRight="@+id/centerOne"
-                    android:layout_alignEnd="@+id/centerOne"
-                    android:layout_marginRight="15dp" />
+                    android:textSize="25dp"
+                    android:textColor="#eaeaea"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@+id/imageView"
+                    android:layout_alignStart="@+id/imageView"
+                    android:layout_toLeftOf="@+id/centerOne"
+                    android:layout_toStartOf="@+id/centerOne" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -159,7 +174,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
                     custom:arc_text_color="#fcd435"
-                    custom:arc_unfinished_color="#9e9d9c"
+                    custom:arc_unfinished_color="#eaeaea"
                     custom:arc_finished_color="#fcd435"
                     custom:arc_progress="20"
                     android:layout_alignParentRight="true" />
