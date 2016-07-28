@@ -28,7 +28,7 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.cameraButton) Button mCameraButton;
     @Bind(R.id.cigarButton) Button mCigarButton;
 
-    @Bind(R.id.hintView) TextView mHintView;
+    @Bind(R.id.atticHintView) TextView mHintView;
 
     private Integer youWin;
     private Integer winNumber;
@@ -42,7 +42,7 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_secret_garden);
+        setContentView(R.layout.activity_attic);
         ButterKnife.bind(this);
         youWin = 0;
         winNumber = 6;
@@ -109,7 +109,6 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
         timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
         mEditor.putInt("timeScore", timeElapsed).apply();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(AtticActivity.this, MainActivity.class);
         startActivity(intent);
@@ -119,7 +118,7 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
         if (stage == 6) {
             winFunction();
         } else {
-            mHintView.setText(Constants.GARDEN_HINTS[stage]);
+            mHintView.setText(Constants.ATTIC_HINTS[stage]);
             youWin ++;
         }
     }

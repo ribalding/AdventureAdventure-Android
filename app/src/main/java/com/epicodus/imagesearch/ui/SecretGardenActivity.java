@@ -75,32 +75,26 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if (view == mButterflyButton ) {
-            Toast.makeText(getApplicationContext(), "Butterfly", Toast.LENGTH_SHORT).show();
             mCucumber.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mCucumber) {
-            Toast.makeText(getApplicationContext(), "Is this even a cucumber?", Toast.LENGTH_SHORT).show();
             mHeartButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mHeartButton) {
-            Toast.makeText(getApplicationContext(), "tree lover", Toast.LENGTH_SHORT).show();
             mCrownButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mCrownButton) {
-            Toast.makeText(getApplicationContext(), "Tweet!", Toast.LENGTH_SHORT).show();
             mCatsGameButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mCatsGameButton) {
-            Toast.makeText(getApplicationContext(), "Possibly an even worse game than this one", Toast.LENGTH_SHORT).show();
             mSquirrelButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mSquirrelButton) {
-            Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
             advance(youWin);
         }
 
@@ -114,7 +108,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
         mEditor.putInt("timeScore", timeElapsed).apply();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(SecretGardenActivity.this, KitchenActivity.class);
         startActivity(intent);

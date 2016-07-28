@@ -78,32 +78,26 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View view) {
         if (view == mEyeButton ) {
-            Toast.makeText(getApplicationContext(), "OW MY EYE", Toast.LENGTH_SHORT).show();
             mHandprintButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mHandprintButton) {
-            Toast.makeText(getApplicationContext(), "Such ominous", Toast.LENGTH_SHORT).show();
             mHatButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mHatButton) {
-            Toast.makeText(getApplicationContext(), "topo'themornintoya", Toast.LENGTH_SHORT).show();
             mYarnButton.setOnClickListener(this);
             advance(youWin);
         }
         if (view == mYarnButton){
-            Toast.makeText(getApplicationContext(), "Very Yarn", Toast.LENGTH_SHORT).show();
             mHookButton.setOnClickListener(this);
             advance(youWin);
         }
         if(view == mHookButton){
-            Toast.makeText(getApplicationContext(), "Hooky Wooky", Toast.LENGTH_SHORT).show();
             mPinsButton.setOnClickListener(this);
             advance(youWin);
         }
         if(view == mPinsButton){
-            Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
             advance(youWin);
         }
         view.setOnClickListener(null);
@@ -114,7 +108,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         mEditor.putInt("timeScore", timeElapsed).apply();
-//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
         Intent intent = new Intent(TrophyRoomActivity.this, EgyptActivity.class);
         startActivity(intent);

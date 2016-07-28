@@ -121,9 +121,8 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         mEditor.putInt("timeScore", timeElapsed).apply();
-//        System.out.println(mSharedPreferences.getInt("timeScore", 1000));
         mTimer.cancel();
-        Intent intent = new Intent(KitchenActivity.this, MainActivity.class);
+        Intent intent = new Intent(KitchenActivity.this, AtticActivity.class);
         startActivity(intent);
     }
 }
