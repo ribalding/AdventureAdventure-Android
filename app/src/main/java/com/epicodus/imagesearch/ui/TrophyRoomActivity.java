@@ -105,7 +105,6 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
             advance(youWin);
         }
         if(view == mPinsButton){
-            Toast.makeText(getApplicationContext(), "TALKIN BOUT PINS", Toast.LENGTH_SHORT).show();
             mArc_Progress.setProgress(20);
             advance(youWin);
         }

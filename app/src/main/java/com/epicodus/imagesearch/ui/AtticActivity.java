@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
+import com.github.lzyzsd.circleprogress.ArcProgress;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,7 +28,7 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.dynamiteButton) Button mDynamiteButton;
     @Bind(R.id.cameraButton) Button mCameraButton;
     @Bind(R.id.cigarButton) Button mCigarButton;
-
+    @Bind(R.id.arc_progress) ArcProgress mArc_Progress;
     @Bind(R.id.atticHintView) TextView mHintView;
 
     private Integer youWin;
@@ -77,25 +78,31 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view == mMustacheButton ) {
             mRatButton.setOnClickListener(this);
+            mArc_Progress.setProgress(83);
             advance(youWin);
         }
         if (view == mRatButton) {
             mFingerPrint.setOnClickListener(this);
+            mArc_Progress.setProgress(87);
             advance(youWin);
         }
         if (view == mFingerPrint) {
             mDynamiteButton.setOnClickListener(this);
+            mArc_Progress.setProgress(90);
             advance(youWin);
         }
         if (view == mDynamiteButton) {
             mCameraButton.setOnClickListener(this);
+            mArc_Progress.setProgress(93);
             advance(youWin);
         }
         if (view == mCameraButton) {
             mCigarButton.setOnClickListener(this);
+            mArc_Progress.setProgress(97);
             advance(youWin);
         }
         if (view == mCigarButton) {
+            mArc_Progress.setProgress(100);
             advance(youWin);
         }
 
