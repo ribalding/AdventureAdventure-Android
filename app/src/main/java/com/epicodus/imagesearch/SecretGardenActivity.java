@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epicodus.imagesearch.ui.KitchenActivity;
+import com.github.lzyzsd.circleprogress.ArcProgress;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,6 +29,8 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Bind(R.id.squirrelButton) Button mSquirrelButton;
     @Bind(R.id.cucumberThingButton) Button mCucumber;
     @Bind(R.id.hintView) TextView mHintView;
+    @Bind(R.id.arc_progress) ArcProgress mArc_Progress;
+
 
     private Integer youWin;
     private Integer winNumber;
@@ -46,12 +49,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         youWin = 0;
         winNumber = 6;
 
-        mButterflyButton.setOnClickListener(this);
-        mCrownButton.setOnClickListener(this);
-        mHeartButton.setOnClickListener(this);
-        mCatsGameButton.setOnClickListener(this);
-        mSquirrelButton.setOnClickListener(this);
-        mCucumber.setOnClickListener(this);
 
         mTimerView = (TextView) findViewById(R.id.timerView);
 
@@ -80,32 +77,32 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if (view == mButterflyButton ) {
-            Toast.makeText(getApplicationContext(), "Butterfly", Toast.LENGTH_SHORT).show();
             mCucumber.setOnClickListener(this);
+            mArc_Progress.setProgress(43);
             advance(youWin);
         }
         if (view == mCucumber) {
-            Toast.makeText(getApplicationContext(), "Is this even a cucumber?", Toast.LENGTH_SHORT).show();
             mHeartButton.setOnClickListener(this);
+            mArc_Progress.setProgress(47);
             advance(youWin);
         }
         if (view == mHeartButton) {
-            Toast.makeText(getApplicationContext(), "tree lover", Toast.LENGTH_SHORT).show();
             mCrownButton.setOnClickListener(this);
+            mArc_Progress.setProgress(50);
             advance(youWin);
         }
         if (view == mCrownButton) {
-            Toast.makeText(getApplicationContext(), "Tweet!", Toast.LENGTH_SHORT).show();
             mCatsGameButton.setOnClickListener(this);
+            mArc_Progress.setProgress(53);
             advance(youWin);
         }
         if (view == mCatsGameButton) {
-            Toast.makeText(getApplicationContext(), "Possibly an even worse game than this one", Toast.LENGTH_SHORT).show();
             mSquirrelButton.setOnClickListener(this);
+            mArc_Progress.setProgress(57);
             advance(youWin);
         }
         if (view == mSquirrelButton) {
-            Toast.makeText(getApplicationContext(), "nut lover", Toast.LENGTH_SHORT).show();
+            mArc_Progress.setProgress(60);
             advance(youWin);
         }
 
@@ -113,7 +110,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void winFunction(){
-        Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         timeElapsed += mSharedPreferences.getInt("timeScore", 1000);

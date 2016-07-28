@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
 import com.epicodus.imagesearch.SecretGardenActivity;
+import com.github.lzyzsd.circleprogress.ArcProgress;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,6 +32,8 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.strainerButton) Button mStrainerButton;
     @Bind(R.id.timerView) TextView mTimerView;
     @Bind(R.id.kitchenHintView) TextView mHintView;
+    @Bind(R.id.arc_progress) ArcProgress mArc_Progress;
+
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -80,32 +83,32 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         if (view == mFrogButton ) {
-            Toast.makeText(getApplicationContext(), "Ribbit", Toast.LENGTH_SHORT).show();
             mCoffeeButton.setOnClickListener(this);
+            mArc_Progress.setProgress(63);
                 advance(youWin);
         }
         if (view == mCoffeeButton) {
-            Toast.makeText(getApplicationContext(), "Precious caffeine", Toast.LENGTH_SHORT).show();
             mStarfishButton.setOnClickListener(this);
+            mArc_Progress.setProgress(67);
                 advance(youWin);
         }
         if (view == mStarfishButton) {
-            Toast.makeText(getApplicationContext(), "Twinkle twinkle", Toast.LENGTH_SHORT).show();
+            mArc_Progress.setProgress(70);
             mOnionButton.setOnClickListener(this);
                 advance(youWin);
         }
         if (view == mOnionButton){
-            Toast.makeText(getApplicationContext(), "Layers upon layers of oniony goodness", Toast.LENGTH_SHORT).show();
             mStrainerButton.setOnClickListener(this);
+            mArc_Progress.setProgress(73);
                 advance(youWin);
         }
         if(view == mStrainerButton){
-            Toast.makeText(getApplicationContext(), "I hope this game isn't too...straining", Toast.LENGTH_SHORT).show();
+            mArc_Progress.setProgress(77);
             mPigButton.setOnClickListener(this);
                 advance(youWin);
         }
         if(view == mPigButton){
-            Toast.makeText(getApplicationContext(), "Oink", Toast.LENGTH_SHORT).show();
+            mArc_Progress.setProgress(80);
                 advance(youWin);
         }
     }

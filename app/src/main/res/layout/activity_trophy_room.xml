@@ -181,7 +181,6 @@
                 <com.github.lzyzsd.circleprogress.ArcProgress
                     android:id="@+id/arc_progress"
                     android:background="@drawable/gold_circle"
-
                     android:layout_marginLeft="72dp"
                     android:layout_width="80dp"
                     android:layout_height="80dp"

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.epicodus.imagesearch.Constants;
 import com.epicodus.imagesearch.R;
 import com.epicodus.imagesearch.SecretGardenActivity;
+import com.github.lzyzsd.circleprogress.ArcProgress;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -39,6 +40,7 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.spiderButton) Button mSpiderButton;
     @Bind(R.id.fishButton) Button mFishButton;
     @Bind(R.id.hintView) TextView mHintView;
+    @Bind(R.id.arc_progress) ArcProgress mArc_Progress;
 
 
 
@@ -81,30 +83,36 @@ public class EgyptActivity extends AppCompatActivity implements View.OnClickList
         if(view == mSpiderButton) {
             advance(youWin);
             mEyesButton.setOnClickListener(this);
+            mArc_Progress.setProgress(23);
         }
 
         if(view == mEyesButton) {
             advance(youWin);
             mDragonButton.setOnClickListener(this);
+            mArc_Progress.setProgress(27);
         }
 
         if (view == mDragonButton){
             advance(youWin);
             mBinoButton.setOnClickListener(this);
+            mArc_Progress.setProgress(30);
         }
 
         if(view == mBinoButton) {
             advance(youWin);
             mFishButton.setOnClickListener(this);
+            mArc_Progress.setProgress(33);
         }
 
         if(view == mFishButton) {
             advance(youWin);
             mPurseButton.setOnClickListener(this);
+            mArc_Progress.setProgress(37);
         }
 
         if(view == mPurseButton) {
             mPurseButton.setOnClickListener(null);
+            mArc_Progress.setProgress(40);
             advance(youWin);
         }
         view.setOnClickListener(null);
