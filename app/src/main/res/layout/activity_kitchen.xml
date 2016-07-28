@@ -23,11 +23,11 @@
 
         <TextView
             android:layout_width="330dp"
-            android:layout_height="50dp"
+            android:layout_height="57dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="DIS B where the hint go"
             android:textAlignment="center"
-            android:textSize="11dp"
+            android:textSize="15dp"
             android:textColor="#000"
             android:id="@+id/kitchenHintView"
             android:layout_alignParentTop="true"
@@ -71,22 +71,6 @@
                 android:layout_toLeftOf="@+id/topLeftCenter"
                 android:layout_toStartOf="@+id/topLeftCenter"
                 android:id="@+id/layoutOne">
-
-
-
-
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/pigButton"
-                    android:background="#00ffffff"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginStart="12dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -235,7 +219,9 @@
                 android:layout_below="@+id/topRightCenter"
                 android:layout_alignRight="@+id/layoutThree"
                 android:layout_alignEnd="@+id/layoutThree"
-                android:id="@+id/layoutSeven"></RelativeLayout>
+                android:id="@+id/layoutSeven">
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -316,6 +302,15 @@
                     android:layout_toRightOf="@+id/elevenCenter"
                     android:layout_toEndOf="@+id/elevenCenter"
                     android:layout_marginLeft="20dp" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pigButton"
+                    android:background="#00ffffff"
+                    android:layout_above="@+id/frogButton"
+                    android:layout_centerHorizontal="true" />
 
             </RelativeLayout>
 

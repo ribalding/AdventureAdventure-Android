@@ -24,11 +24,11 @@
 
         <TextView
             android:layout_width="330dp"
-            android:layout_height="50dp"
+            android:layout_height="58dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="DIS B where the hint go"
             android:textAlignment="center"
-            android:textSize="11dp"
+            android:textSize="15dp"
             android:textColor="#000"
             android:id="@+id/hintView"
             android:layout_alignParentTop="true"

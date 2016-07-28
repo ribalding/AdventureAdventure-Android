@@ -22,8 +22,8 @@ public class Constants {
     public static final String[] TROPHY_HINTS = {
             "Let's hope this is \nmade of glass.",
             "Wilson's \nface.",
-            "A sophisticated lid \nfor your HEED.",
-            "Telling a good story is also spinning \na good one of these...",
+            "A sophisticated lid \nfor your head.",
+            "Telling a good story is also \nspinning a good one of these...",
             "A gallows \nfor worms.",
             "At home on \na corkboard."
     };
@@ -34,7 +34,7 @@ public class Constants {
             "In the sky and \nunder the sea.",
             "Don't \ncry.",
             "Food goes in, \nwater comes out.",
-            "Timon's best \nfriend."
+            "I'll hold \nyou tight."
     };
 
     public static final String[] ATTIC_HINTS = {

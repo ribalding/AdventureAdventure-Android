@@ -2,6 +2,7 @@ package com.epicodus.imagesearch.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,6 +46,8 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attic);
         ButterKnife.bind(this);
+        Typeface thunderFont = Typeface.createFromAsset(getAssets(), "fonts/Thunder Strike.ttf");
+        mHintView.setTypeface(thunderFont);
         youWin = 0;
         winNumber = 6;
 

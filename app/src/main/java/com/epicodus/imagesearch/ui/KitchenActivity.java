@@ -2,6 +2,7 @@ package com.epicodus.imagesearch.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,8 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
         ButterKnife.bind(this);
+        Typeface thunderFont = Typeface.createFromAsset(getAssets(), "fonts/Thunder Strike.ttf");
+        mHintView.setTypeface(thunderFont);
         youWin = 0;
         winNumber = 6;
         advance(0);
