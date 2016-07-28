@@ -37,10 +37,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, TrophyRoomActivity.class);
             startActivity(intent);
         }
-
-        if(view  == mWinTestButton) {
-            Intent winIntent = new Intent(MainActivity.this, WinScreenActivity.class);
-            startActivity(winIntent);
-        }
     }
 }

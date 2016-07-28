@@ -129,7 +129,9 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         Toast.makeText(getApplicationContext(), "Holy &%^# you win!", Toast.LENGTH_LONG).show();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
+        timeElapsed += mSharedPreferences.getInt("timeScore", 1000);
         mEditor.putInt("timeScore", timeElapsed).apply();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mTimer.cancel();
         Intent intent = new Intent(KitchenActivity.this, AtticActivity.class);
         startActivity(intent);

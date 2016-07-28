@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 <<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagesearchgame.iml" filepath="$PROJECT_DIR$/imagesearchgame.iml" />
@@ -9,6 +11,14 @@
       <module fileurl="file://$PROJECT_DIR$/ImageSearchGame.iml" filepath="$PROJECT_DIR$/ImageSearchGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
 >>>>>>> youwin
+=======
+      <module fileurl="file://$PROJECT_DIR$/ImageSearchGame.iml" filepath="$PROJECT_DIR$/ImageSearchGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+>>>>>>> 31cbbfab6a09e6befd917611bedd1e596a3cbeca
+=======
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagesearchgame.iml" filepath="$PROJECT_DIR$/imagesearchgame.iml" />
+>>>>>>> Stashed changes
     </modules>
   </component>
 </project>

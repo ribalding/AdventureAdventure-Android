@@ -120,7 +120,7 @@ public class AtticActivity extends AppCompatActivity implements View.OnClickList
         mEditor.putInt("timeScore", timeElapsed).apply();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mTimer.cancel();
-        Intent intent = new Intent(AtticActivity.this, MainActivity.class);
+        Intent intent = new Intent(AtticActivity.this, WinScreenActivity.class);
         startActivity(intent);
     }
 
