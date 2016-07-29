@@ -46,8 +46,8 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trophy_room);
         ButterKnife.bind(this);
-        Typeface thunderFont = Typeface.createFromAsset(getAssets(), "fonts/Thunder Strike.ttf");
-        mHintView.setTypeface(thunderFont);
+        Typeface carletonFont = Typeface.createFromAsset(getAssets(), "fonts/Carleton.ttf");
+        mHintView.setTypeface(carletonFont);
         youWin = 0;
         winNumber = 6;
 
@@ -92,11 +92,15 @@ public class TrophyRoomActivity extends AppCompatActivity implements View.OnClic
         }
         if (view == mHatButton) {
             mYarnButton.setOnClickListener(this);
+            mHintView.setPadding(0, 9, 0, 0);
+            mHintView.setTextSize(13);
             mArc_Progress.setProgress(10);
             advance(youWin);
         }
         if (view == mYarnButton){
             mHookButton.setOnClickListener(this);
+            mHintView.setPadding(0, 0, 0, 0);
+            mHintView.setTextSize(15);
             mArc_Progress.setProgress(13);
             advance(youWin);
         }

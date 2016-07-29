@@ -26,4 +26,15 @@
         android:layout_below="@+id/winImageView"
         android:layout_centerHorizontal="true"
         android:textColor="#000000"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:padding="20dp"
+        android:id="@+id/startOverButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Play Again!" />
 </RelativeLayout>

@@ -31,7 +31,6 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
     @Bind(R.id.hintView) TextView mHintView;
     @Bind(R.id.arc_progress) ArcProgress mArc_Progress;
 
-
     private Integer youWin;
     private Integer winNumber;
     Timer mTimer;
@@ -46,10 +45,11 @@ public class SecretGardenActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secret_garden);
         ButterKnife.bind(this);
-        Typeface thunderFont = Typeface.createFromAsset(getAssets(), "fonts/Thunder Strike.ttf");
-        mHintView.setTypeface(thunderFont);
+        Typeface carletonFont = Typeface.createFromAsset(getAssets(), "fonts/Carleton.ttf");
+        mHintView.setTypeface(carletonFont);
         youWin = 0;
         winNumber = 6;
+        mHintView.setTextSize(13);
 
         mButterflyButton.setOnClickListener(this);
 

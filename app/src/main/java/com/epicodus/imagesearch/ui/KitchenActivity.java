@@ -49,8 +49,8 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
         ButterKnife.bind(this);
-        Typeface thunderFont = Typeface.createFromAsset(getAssets(), "fonts/Thunder Strike.ttf");
-        mHintView.setTypeface(thunderFont);
+        Typeface carletonFont = Typeface.createFromAsset(getAssets(), "fonts/Carleton.ttf");
+        mHintView.setTypeface(carletonFont);
         youWin = 0;
         winNumber = 6;
         advance(0);

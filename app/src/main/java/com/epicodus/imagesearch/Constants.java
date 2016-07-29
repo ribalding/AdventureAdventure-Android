@@ -2,7 +2,7 @@ package com.epicodus.imagesearch;
 
 public class Constants {
     public static final String[] EGYPT_HINTS = {
-            "Anagram of P R I D E S",
+            "Anagram of\nP R I D E S",
             "Windows to\nthe soul",
             "Of Fire\nand Stone",
             "Dual\nspyglass",
@@ -23,7 +23,7 @@ public class Constants {
             "Let's hope this is\nmade of glass",
             "Wilson's\nface",
             "A sophisticated\nlid",
-            "Telling a good story is also\nspinning a good one of these...",
+            "Telling a good story is also\nspinning a good one of these.",
             "Defines a fancy\ndinner party",
             "At home on\na corkboard"
     };
@@ -38,7 +38,7 @@ public class Constants {
     };
 
     public static final String[] ATTIC_HINTS = {
-            "Handlebar ____________",
+            "Handlebar\n_ _ _ _ _ _ _ _",
             "Master\nSplinter",
             "Crime Scene\nSlip Up",
             "Nitroglycerin With An\nAbsorbent and a Stabilizer",
