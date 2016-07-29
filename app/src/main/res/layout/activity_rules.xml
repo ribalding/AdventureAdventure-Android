@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.epicodus.imagesearch.ui.RulesActivity"
+    android:background="@drawable/welcome_image">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingLeft="20dp"
+        android:text="How To Play:"
+        android:id="@+id/rulesTitleView"
+        android:textColor="#393b4b"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/rulesView"
+        android:layout_alignLeft="@+id/rulesView"
+        android:layout_alignStart="@+id/rulesView" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="- The object of the game is to find the objects on the screen by clicking on them. \n- The hint at the top of the screen will lead you to your next object. \n- Your total time taken will be displayed at the end of the game. \n- Your reward is freedom. \n- Have fun on your adventure adventure!"
+        android:id="@+id/rulesView"
+        android:textColor="#393b4b"
+        android:textStyle="bold"
+        android:background="#aaeaeaea"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/backButton"
+        android:background="@drawable/rounded_button"
+        android:allowUndo="true"
+        android:textStyle="bold"
+        android:padding="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.startButton) Button mStartButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
+    @Bind(R.id.rulesButton) Button mRulesButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mStartButton.setOnClickListener(this);
+        mRulesButton.setOnClickListener(this);
 
         Typeface pacificoFont = Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
         mWelcomeTextView.setTypeface(pacificoFont);
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == mStartButton) {
             Intent intent = new Intent(MainActivity.this, TrophyRoomActivity.class);
+            startActivity(intent);
+        }
+        if (view == mRulesButton) {
+            Intent intent = new Intent(MainActivity.this, RulesActivity.class);
             startActivity(intent);
         }
     }
