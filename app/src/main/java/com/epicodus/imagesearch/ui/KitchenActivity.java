@@ -115,6 +115,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
             mArc_Progress.setProgress(80);
                 advance(youWin);
         }
+        view.setOnClickListener(null);
     }
     private void advance(int stage) {
         if (stage == 6) {
@@ -123,6 +124,7 @@ public class KitchenActivity extends AppCompatActivity implements View.OnClickLi
             mHintView.setText(Constants.KITCHEN_HINTS[stage]);
             youWin++;
         }
+
     }
 
     private void winFunction(){
